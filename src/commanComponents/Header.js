@@ -409,24 +409,24 @@ const Header = () => {
   useEffect(() => {
     const root = document.documentElement;
 
-    const setThemeVariables = (bgColor, textColor, navBg, dropdownBg) => {
-      root.style.setProperty('--bg-color', bgColor);
-      root.style.setProperty('--text-color', textColor);
-      root.style.setProperty('--nav-bg', navBg);
-      root.style.setProperty('--dropdown-bg', dropdownBg);
-    };
+    // const setThemeVariables = (bgColor, textColor, navBg, dropdownBg) => {
+    //   root.style.setProperty('--bg-color', bgColor);
+    //   root.style.setProperty('--text-color', textColor);
+    //   root.style.setProperty('--nav-bg', navBg);
+    //   root.style.setProperty('--dropdown-bg', dropdownBg);
+    // };
 
-    if (isDark) {
-      setThemeVariables('#0a0a12', '#ffffff', 'rgba(16, 16, 26, 0.7)', 'rgba(20, 20, 35, 0.8)');
-      root.style.setProperty('--gradient-bg', 'linear-gradient(135deg, #0a0a12, #151530)');
-      root.style.setProperty('--border-color', 'rgba(255, 255, 255, 0.08)');
-      root.style.setProperty('--text-description', 'rgba(255, 255, 255, 0.7)');
-    } else {
-      setThemeVariables('#ffffff', '#0a0a12', 'rgba(255, 255, 255, 0.8)', 'rgba(240, 240, 255, 0.9)');
-      root.style.setProperty('--gradient-bg', 'linear-gradient(135deg, #ffffff, #f0f4ff)');
-      root.style.setProperty('--border-color', 'rgba(0, 0, 0, 0.08)');
-      root.style.setProperty('--text-description', 'rgba(0, 0, 0, 0.7)');
-    }
+    // if (isDark) {
+    //   setThemeVariables('#0a0a12', '#ffffff', 'rgba(16, 16, 26, 0.7)', 'rgba(20, 20, 35, 0.8)');
+    //   root.style.setProperty('--gradient-bg', 'linear-gradient(135deg, #0a0a12, #151530)');
+    //   root.style.setProperty('--border-color', 'rgba(255, 255, 255, 0.08)');
+    //   root.style.setProperty('--text-description', 'rgba(255, 255, 255, 0.7)');
+    // } else {
+    //   setThemeVariables('#ffffff', '#0a0a12', 'rgba(255, 255, 255, 0.8)', 'rgba(240, 240, 255, 0.9)');
+    //   root.style.setProperty('--gradient-bg', 'linear-gradient(135deg, #ffffff, #f0f4ff)');
+    //   root.style.setProperty('--border-color', 'rgba(0, 0, 0, 0.08)');
+    //   root.style.setProperty('--text-description', 'rgba(0, 0, 0, 0.7)');
+    // }
 
     document.body.classList.add('theme-transition');
     const timeout = setTimeout(() => {
