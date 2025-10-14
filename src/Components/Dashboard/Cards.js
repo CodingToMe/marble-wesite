@@ -31,59 +31,55 @@ const Cards = () => {
   return (
     <div className="slider-cards">
       <Slider {...settings}>
-        <div className="px-2">
-          <figure>
-            <img
-              src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
-              className="card-img-top"
-              alt="Hollywood Sign on The Hill"
-            />
-          </figure>
-          <h5 className="title">Card title</h5>
+        <div className="  container d-flex align-items-center justify-content-center" style={{ height: "100vh" }}>
+          <div className=" cat-card card text-light border-0 " style={{ maxWidth: "20em" }}>
+            <img src="https://codingyaar.com/wp-content/uploads/lamp.jpg" className="card-img" alt="..." />
+            <div className="card-img-overlay text-center">
+              <h5 className="card-title fw-bold fs-1">Lamps</h5>
+              <button className="btn btn-outline-light btn-sm rounded-0 mt-2">Shop Now</button>
+            </div>
+          </div>
+        </div>
+        <div className=" container d-flex align-items-center justify-content-center" style={{ height: "100vh" }}>
+          <div className="cat-card card text-light border-0 " style={{ maxWidth: "20em" }}>
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" className="card-img" alt="..." />
+            <div className="card-img-overlay text-center">
+              <h5 className="card-title fw-bold fs-1">Lamps</h5>
+              <button className="btn btn-outline-light btn-sm rounded-0 mt-2">Shop Now</button>
+            </div>
+          </div>
         </div>
 
-        <div className="px-2">
-          <figure>
-            <img
-              src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp"
-              className="card-img-top"
-              alt="Palm Springs Road"
-            />
-          </figure>
-          <h5 className="title">Card title</h5>
+        <div className=" container d-flex align-items-center justify-content-center" style={{ height: "100vh" }}>
+          <div className=" cat-card card text-light border-0 " style={{ maxWidth: "20em" }}>
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" className="card-img" alt="..." />
+            <div className="card-img-overlay text-center">
+              <h5 className="card-title fw-bold fs-1">Lamps</h5>
+              <button className="btn btn-outline-light btn-sm rounded-0 mt-2">Shop Now</button>
+            </div>
+          </div>
         </div>
 
-        <div className="px-2">
-          <figure>
-            <img
-              src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp"
-              className="card-img-top"
-              alt="Los Angeles Skyscrapers"
-            />
-          </figure>
-          <h5 className="title">Card title</h5>
-        </div>
-        <div className="px-2">
-          <figure>
-            <img
-              src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp"
-              className="card-img-top"
-              alt="Los Angeles Skyscrapers"
-            />
-          </figure>
-          <h5 className="title">Card title</h5>
-        </div>
-        <div className="px-2">
-          <figure>
-            <img
-              src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp"
-              className="card-img-top"
-              alt="Los Angeles Skyscrapers"
-            />
-          </figure>
-          <h5 className="title">Card title</h5>
+
+        <div className=" container d-flex align-items-center justify-content-center" style={{ height: "100vh" }}>
+          <div className="cat-card card text-light border-0 " style={{ maxWidth: "20em" }}>
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" className="card-img" alt="..." />
+            <div className="card-img-overlay text-center">
+              <h5 className="card-title fw-bold fs-1">Lamps</h5>
+              <button className="btn btn-outline-light btn-sm rounded-0 mt-2">Shop Now</button>
+            </div>
+          </div>
         </div>
 
+        <div className="cat-card container d-flex align-items-center justify-content-center" style={{ height: "100vh" }}>
+          <div className="card text-light border-0 " style={{ maxWidth: "20em" }}>
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" className="card-img" alt="..." />
+            <div className="card-img-overlay text-center">
+              <h5 className="card-title fw-bold fs-1">Lamps</h5>
+              <button className="btn btn-outline-light btn-sm rounded-0 mt-2">Shop Now</button>
+            </div>
+          </div>
+        </div>
 
       </Slider>
     </div>
