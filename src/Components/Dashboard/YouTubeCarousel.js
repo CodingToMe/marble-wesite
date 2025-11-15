@@ -73,7 +73,7 @@ const YouTube3DCarousel = () => {
           ))}
         </div>
         <button onClick={nextSlide} className="arrow-btn">
-          &#8594;
+          &#8594; 
         </button>
       </div>
     </div>
