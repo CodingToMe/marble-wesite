@@ -87,7 +87,7 @@ const CNCMarbleSection = () => {
                       >
                         View More <i class="fa fa-arrow-right ms-1" aria-hidden="true"></i> 
                         
-                        </button>
+                      </button>
                     </div>
                   </li>
                 );

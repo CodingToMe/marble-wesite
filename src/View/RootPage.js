@@ -1,6 +1,8 @@
 import React from 'react'
-import { Header } from '../commanComponents'
+import { Footer, Header } from '../commanComponents'
 import { Cards, CarouselSection, CNCMarbleWork, DayaMarbleSlider } from '../Components/Dashboard'
+import CNCTool from '../Components/Dashboard/CNCTool'
+import YouTubeCarousel from '../Components/Dashboard/YouTubeCarousel'
 
 
 const RootPage = () => {
@@ -17,7 +19,6 @@ const RootPage = () => {
           <p className='paragraph-section'>Explore our exclusive collection of design templates crafted by top designers worldwide.
             Elevate your projects with professional, customizable designs that cater to all your creative needs.</p>
         </div>
-
         <Cards />
       </div>
 
@@ -51,14 +52,15 @@ const RootPage = () => {
         <CNCMarbleWork />
       </div>
       <div className=' daya-marbale-section'>
-       <div className='row'>
-        <div className='col-6'>
-          
-        </div>
-        <div className='col-6'>
-        </div>
-       </div>
+       <CNCTool/>
       </div>
+
+      <div className=' youtube-section'>
+       <YouTubeCarousel/>
+      </div>
+      <>
+      <Footer />
+      </>
 
 
     </>
