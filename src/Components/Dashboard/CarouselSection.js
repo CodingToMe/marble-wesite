@@ -58,64 +58,64 @@ const CarouselSection = () => {
           <div className="item">
             <img src="images/mandir_images/mandir3.jxl" alt="slide1" />
             <div className="content">
-              <div className="author">LUNDEV</div>
-              <div className="title">DESIGN SLIDER</div>
-              <div className="topic">ANIMAL</div>
+              <div className="author">White Marble Art</div>
+              <div className="title">TRADITIONAL DESIGN</div>
+              <div className="topic">MANDIR</div>
               <div className="des">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut
-                sequi, rem magnam nesciunt minima placeat...
+                White marble temple featuring intricate CNC carvings, traditional domes, and elegant peacock motifs for luxury home interiors.
               </div>
               <div className="buttons">
                 <button>SEE MORE</button>
-                <button>SUBSCRIBE</button>
+                <button>Contect</button>
+                
               </div>
             </div>
           </div>
           <div className="item">
-            <img src="images/img2.jpg" alt="slide2" />
+            <img src="images/mandir_images/mandirc1.png" alt="slide2" />
             <div className="content">
-              <div className="author">LUNDEV</div>
-              <div className="title">DESIGN SLIDER</div>
-              <div className="topic">ANIMAL</div>
+              <div className="author">White Marble Art</div>
+              <div className="title">PUSPH DESIGN</div>
+              <div className="topic">MANDIR</div>
               <div className="des">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                sequi, rem magnam nesciunt minima placeat...
+                Pure white marble temple featuring a carved lotus crown, intricate jali arch, and hand-painted floral inlay for palace-style luxury homes.
               </div>
               <div className="buttons">
                 <button>SEE MORE</button>
-                <button>SUBSCRIBE</button>
+                <button>CONTECT US</button>
+             
               </div>
             </div>
           </div>
           <div className="item">
-            <img src="images/img3.jpg" alt="slide3" />
+            <img src="images/mandir_images/mandirc2.png" alt="slide3" />
             <div className="content">
-              <div className="author">LUNDEV</div>
-              <div className="title">DESIGN SLIDER</div>
-              <div className="topic">ANIMAL</div>
+              <div className="author">White Marble Art</div>
+              <div className="title">PEACOCK OM DESIGN</div>
+              <div className="topic">MANDIR</div>
               <div className="des">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                sequi, rem magnam nesciunt minima placeat...
+                White marble temple with fine CNC carvings, hand-painted peacocks, and a peacock-feather Om centerpiece for elegant home interiors.
               </div>
               <div className="buttons">
                 <button>SEE MORE</button>
-                <button>SUBSCRIBE</button>
+                <button>CONTECT</button>
+               
               </div>
             </div>
           </div>
           <div className="item">
-            <img src="images/img4.jpg" alt="slide4" />
+            <img src="images/mandir_images/mandirc3.png" alt="slide4" />
             <div className="content">
-              <div className="author">LUNDEV</div>
-              <div className="title">DESIGN SLIDER</div>
-              <div className="topic">ANIMAL</div>
+              <div className="author">White Marble Art</div>
+              <div className="title">ROYAL MAYUR DESIGN</div>
+              <div className="topic">MANDIR</div>
               <div className="des">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                sequi, rem magnam nesciunt minima placeat...
+                Grand white marble temple with vibrant peacock motifs, auspicious swastik panels, and detailed carved drawers for luxury living spaces.
               </div>
               <div className="buttons">
                 <button>SEE MORE</button>
-                <button>SUBSCRIBE</button>
+                <button >CONTECT</button>
+                
               </div>
             </div>
           </div>
