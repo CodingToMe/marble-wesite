@@ -56,7 +56,7 @@ const CarouselSection = () => {
         {/* list item */}
         <div className="list">
           <div className="item">
-            <img src="images/img1.jpg" alt="slide1" />
+            <img src="images/mandir_images/mandir3.jxl" alt="slide1" />
             <div className="content">
               <div className="author">LUNDEV</div>
               <div className="title">DESIGN SLIDER</div>

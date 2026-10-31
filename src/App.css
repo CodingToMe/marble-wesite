@@ -114,7 +114,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     background: var(--nav-bg);
     backdrop-filter: var(--glass-effect);
     -webkit-backdrop-filter: var(--glass-effect);
@@ -173,6 +173,7 @@ p {
     display: flex;
     gap: 1.5rem;
     list-style: none;
+    margin-bottom: 0px;
 }
 
 /* .nav-menu ul li{

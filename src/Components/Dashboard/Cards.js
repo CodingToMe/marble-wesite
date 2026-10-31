@@ -33,7 +33,7 @@ const Cards = () => {
       <Slider {...settings}>
         <div className="  container d-flex align-items-center justify-content-center" style={{ height: "100vh" }}>
           <div className=" cat-card card text-light border-0 " style={{ maxWidth: "20em" }}>
-            <img src="https://codingyaar.com/wp-content/uploads/lamp.jpg" className="card-img" alt="..." />
+            <img src="images/mandir_images/mandir1.jpg" className="card-img" alt="..." />
             <div className="card-img-overlay text-center">
               <h5 className="card-title fw-bold fs-1">Lamps</h5>
               <button className="btn btn-outline-light btn-sm rounded-0 mt-2">Shop Now</button>
