@@ -1082,8 +1082,9 @@ p {
     /* left: 20%; */
     /* top: 15%; */
     /* width: 40%; */
-    width: 290px;
-    height: 290px;
+    width: 270px;
+    height: 320px;
+    object-fit: fill !important;
     /* transform:
     translateX(calc(var(--hover) * -15%))
     scale(calc(1 + (var(--hover) * 0.2)));
@@ -1122,6 +1123,13 @@ p {
     /* subtle dark overlay */
     opacity: 1;
 }
+.card-img-overlay .para{
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    bottom: 1px;
+
+}
 
 .daya-marbale-section {
     margin: 70px 0px !important;
@@ -1149,6 +1157,13 @@ p {
     padding-right: 20px;
     border-right: 2px solid #000000b3;
     text-align: center;
+    cursor: pointer;
+    
+}
+.daya-list li.active {
+ 
+  color: var(--primary-color);
+ 
 }
 
 /* remove border from last li */

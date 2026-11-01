@@ -3,30 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const DayaMarbleSlider = () => {
-  const slidesData = [
-    {
-      title: "Flawless White",
-      img: "https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp",
-      desc: "Flawless White is luxurious, versatile, and perfect for temples and homes."
-    },
-    {
-      title: "Imported Marble",
-      img: "https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp",
-      desc: "Imported Marble brings elegance and durability with stunning textures."
-    },
-    {
-      title: "Imported Italian Marble",
-      img: "https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp",
-      desc: "Imported Italian Marble is known worldwide for beauty and strength."
-    },
-    {
-      title: "Travertine Marble",
-      img: "https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp",
-      desc: "Travertine Marble offers a natural rustic look with timeless appeal."
-    }
-  ];
-
+const DayaMarbleSlider = ({ activeTab, activeTabData }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const settings = {
@@ -41,22 +18,26 @@ const DayaMarbleSlider = () => {
     beforeChange: (current, next) => setActiveIndex(next), // update content when slide changes
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } }
-    ]
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
+    ],
   };
 
   return (
     <section className="marble-section">
       {/* Left content updates based on active slide */}
       <div className="marble-content">
-        <h2>Popular Marble, Mandir</h2>
-        <p>{slidesData[activeIndex].desc}</p>
+        <h2>Explore Our Premium Marble Slabs</h2>
+        <p>
+          Explore our premium Black Granite and authentic Makrana White Marble
+          collection. Exceptional quality, natural beauty, and timeless elegance
+          for every space.
+        </p>
       </div>
 
       {/* Right slider */}
       <div className="slider-wrapper">
-        <Slider {...settings}>
-          {slidesData.map((slide, idx) => (
+        <Slider key={activeTab} {...settings}>
+          {activeTabData.map((slide, idx) => (
             <div className="slide-card" key={idx}>
               <img src={slide.img} alt={slide.title} />
               <div className="overlay">

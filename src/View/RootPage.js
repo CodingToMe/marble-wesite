@@ -1,8 +1,9 @@
 import React from 'react'
 import { Footer, Header } from '../commanComponents'
-import { Cards, CarouselSection, CNCMarbleWork, DayaMarbleSlider } from '../Components/Dashboard'
+import { Cards, CarouselSection, CNCMarbleWork,MarbleSection  } from '../Components/Dashboard'
 import CNCTool from '../Components/Dashboard/CNCTool'
 import YouTubeCarousel from '../Components/Dashboard/YouTubeCarousel'
+
 
 
 const RootPage = () => {
@@ -10,7 +11,7 @@ const RootPage = () => {
     <>
       <Header />
       <CarouselSection />
-      <div className='container  rootpage'>
+      <div className='container  rootpage mt-4'>
         <div className='a1-section mt-4 text-center'>
           <div className='title-section '>
             <h3>Home Marble Mandir</h3>
@@ -21,23 +22,8 @@ const RootPage = () => {
         <Cards />
       </div>
 
-      <div className=' daya-marbale-section'>
-        <div className='text-center'>
-          <div className='title-section '>
-            <h3 style={{ marginBottom: "0px" }}>Daya Marble</h3>
-            <img src="images/red-underline.png" alt="line" width={"108px"} />
-          </div>
-          <ul className='daya-list'>
-            <li> Mandir</li>
-            <li>Jain Temple</li>
-            <li>Marble Slab</li>
-          </ul>
-        </div>
-        <DayaMarbleSlider />
-
-
-
-      </div>
+      {/* Marble Section */}
+      <MarbleSection/>
       {/* CNC Marble Work  */}
       <div className='container  rootpage'>
         <div className='a1-section mt-4 text-center'>
