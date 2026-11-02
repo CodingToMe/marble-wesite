@@ -62,7 +62,7 @@ const Cards = () => {
             />
             <div className="card-img-overlay text-center"></div>
             <div className="card-img-overlay ">
-            <p className="p para">Exquisite Vietnam Marble Pooja Mandir – Luxury Handcrafted Sacred Temple</p>
+            <p className="p para">Premium Marble Temple – Elegant Traditional Craftsmanship with Timeless Beauty</p>
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@ const Cards = () => {
             />
             <div className="card-img-overlay text-center"></div>
             <div className="card-img-overlay ">
-            <p className="p para">Exquisite Vietnam Marble Pooja Mandir – Luxury Handcrafted Sacred Temple</p>
+            <p className="p para">Designer Vietnam Marble Mandir – Beautifully Crafted for Sacred Spaces</p>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ const Cards = () => {
             />
             <div className="card-img-overlay text-center"></div>
             <div className="card-img-overlay ">
-            <p className="p para">Exquisite Vietnam Marble Pooja Mandir – Luxury Handcrafted Sacred Temple</p>
+            <p className="p para">Exclusive Marble Pooja Mandir – A Perfect Blend of Luxury and Devotion</p>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ const Cards = () => {
             
             <div className="card-img-overlay text-center"></div>
             <div className="card-img-overlay ">
-            <p className="p para">Exquisite Vietnam Marble Pooja Mandir – Luxury Handcrafted Sacred Temple</p>
+            <p className="p para">Handcrafted Marble Temple – Bringing Spiritual Elegance to Your Home</p>
             </div>
           </div>
         </div>

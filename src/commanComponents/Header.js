@@ -47,7 +47,7 @@
 // //   <input type="checkbox" id="toggler" />
 // //   <label htmlFor="toggler" className="fas fa-bars" />
 
-// //   <a className="logo">flower <span>.</span></a> 
+// //   <a className="logo">flower <span>.</span></a>
 
 // //   <nav className="navbar">
 // //     <div class="navitem">Home</div>
@@ -143,11 +143,6 @@
 //     </div>
 //   </div>
 // </nav>
-
-
-
-
-
 
 //   )
 // }
@@ -340,20 +335,19 @@
 
 // export default Header
 
-
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
 const Header = () => {
   const [navActive, setNavActive] = useState(false);
   const [dropdownActive, setDropdownActive] = useState(null);
   const [isDark, setIsDark] = useState(true);
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   const [searchFocused, setSearchFocused] = useState(false);
   const navbarRef = useRef();
 
   const toggleNav = () => {
     setNavActive(!navActive);
-    document.body.style.overflow = !navActive ? 'hidden' : '';
+    document.body.style.overflow = !navActive ? "hidden" : "";
   };
 
   const handleDropdownClick = (index, e) => {
@@ -368,14 +362,14 @@ const Header = () => {
   };
 
   const performSearch = (query) => {
-    console.log('Searching for:', query);
+    console.log("Searching for:", query);
   };
 
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (navbarRef.current && !navbarRef.current.contains(e.target)) {
         setNavActive(false);
-        document.body.style.overflow = '';
+        document.body.style.overflow = "";
       }
     };
 
@@ -383,26 +377,26 @@ const Header = () => {
       if (window.innerWidth > 968) {
         setNavActive(false);
         setDropdownActive(null);
-        document.body.style.overflow = '';
+        document.body.style.overflow = "";
       }
     };
 
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        navbarRef.current?.classList.add('scrolled');
+        navbarRef.current?.classList.add("scrolled");
       } else {
-        navbarRef.current?.classList.remove('scrolled');
+        navbarRef.current?.classList.remove("scrolled");
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
+    document.addEventListener("click", handleClickOutside);
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      document.removeEventListener('click', handleClickOutside);
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener("click", handleClickOutside);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [navActive]);
 
@@ -428,9 +422,9 @@ const Header = () => {
     //   root.style.setProperty('--text-description', 'rgba(0, 0, 0, 0.7)');
     // }
 
-    document.body.classList.add('theme-transition');
+    document.body.classList.add("theme-transition");
     const timeout = setTimeout(() => {
-      document.body.classList.remove('theme-transition');
+      document.body.classList.remove("theme-transition");
     }, 1000);
 
     return () => clearTimeout(timeout);
@@ -438,9 +432,21 @@ const Header = () => {
 
   return (
     <header className="header">
-      <nav className={`navbar ${navActive ? 'nav-active' : ''}`} ref={navbarRef}>
+      <nav
+        className={`navbar ${navActive ? "nav-active" : ""}`}
+        ref={navbarRef}
+      >
         <div className="nav-brand">
-          <a href="#" className="logo">LOGO</a>
+          <img
+              src="images/wmaLogo.png"
+              style={{
+                height: "36px",
+                width: "65px",
+              }}
+            />
+          <span href="#" className="logo">
+            White Marble Art
+          </span>
         </div>
         <div className="nav-toggle" onClick={toggleNav}>
           <div className="hamburger">
@@ -449,39 +455,76 @@ const Header = () => {
             <span />
           </div>
         </div>
-        <div className="nav-menu">
+        <div className="nav-menu" style={{fontSize:"14px"}}>
           <ul className="nav-list">
-            {['Home', 'Products', 'Services', 'Portfolio', 'About', 'Contact'].map((item, index) => (
-              <li key={index} className={`nav-item ${['Products', 'Services'].includes(item) ? 'has-dropdown' : ''} ${dropdownActive === index ? 'active' : ''}`}>
-                <a href="#" className="nav-link" onClick={(e) => handleDropdownClick(index, e)}>
+            {[
+              "Home",
+              "Products",
+              "Services",
+              // "Portfolio",
+              "About",
+              "Contact",
+            ].map((item, index) => (
+              <li
+                key={index}
+                className={`nav-item ${["Products", "Services"].includes(item) ? "has-dropdown" : ""} ${dropdownActive === index ? "active" : ""}`}
+              >
+                <a
+                  href="#"
+                  className="nav-link"
+                  onClick={(e) => handleDropdownClick(index, e)}
+                >
                   {item}
-                  {['Products', 'Services'].includes(item) && (
-                    <svg className="icon chevron-icon" viewBox="0 0 24 24" width={14} height={14}>
+                  {["Products", "Services"].includes(item) && (
+                    <svg
+                      className="icon chevron-icon"
+                      viewBox="0 0 24 24"
+                      width={14}
+                      height={14}
+                    >
                       <path d="M7 10l5 5 5-5z" fill="currentColor" />
                     </svg>
                   )}
                 </a>
-                {item === 'Products' && (
+                {item === "Products" && (
                   <ul className="dropdown">
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Featured</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Seasonal</a></li>
+                    <li>
+                      <a href="#">Mandir</a>
+                    </li>
+                    <li>
+                      <a href="#">Fountain</a>
+                    </li>
+                    <li>
+                      <a href="#">Home Office Decor</a>
+                    </li>
+                    <li>
+                      <a href="#">Flower Pots</a>
+                    </li>
                   </ul>
                 )}
-                {item === 'Services' && (
+                {item === "Services" && (
                   <ul className="dropdown">
-                    <li><a href="#">Consulting</a></li>
-                    <li><a href="#">Development</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Training</a></li>
+                    <li>
+                      <a href="#">Custom Mandir Design </a>
+                    </li>
+                    <li>
+                      <a href="#">Marble Architectural Solutions</a>
+                    </li>
+                    <li>
+                      <a href="#">Marble Manufacturing </a>
+                    </li>
+                    <li>
+                      <a href="#">All Type Marble Installation</a>
+                    </li>
                   </ul>
                 )}
               </li>
             ))}
           </ul>
           <div className="nav-actions">
-            <div className={`search-container ${searchFocused ? 'search-focused' : ''}`}>
+            <div
+              className={`search-container ${searchFocused ? "search-focused" : ""}`}
+            >
               <input
                 type="text"
                 className="search-input"
@@ -491,7 +534,7 @@ const Header = () => {
                 onFocus={() => setSearchFocused(true)}
                 onBlur={() => setSearchFocused(false)}
                 onKeyPress={(e) => {
-                  if (e.key === 'Enter' && searchValue.trim()) {
+                  if (e.key === "Enter" && searchValue.trim()) {
                     e.preventDefault();
                     performSearch(searchValue);
                   }
@@ -504,7 +547,12 @@ const Header = () => {
                   if (searchValue.trim()) performSearch(searchValue);
                 }}
               >
-                <svg className="icon search-icon" viewBox="0 0 24 24" width={18} height={18}>
+                <svg
+                  className="icon search-icon"
+                  viewBox="0 0 24 24"
+                  width={18}
+                  height={18}
+                >
                   <path
                     d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5
                       16 5.91 13.09 3 9.5 3S3 5.91 3 9.5
@@ -516,9 +564,13 @@ const Header = () => {
                 </svg>
               </button>
             </div>
-            <div className='theme-toggle'>
-              <img className='cart-icon' src='images/cart1.svg' alt="cart icon" />
-              <span className='cart-count'>1</span>
+            <div className="theme-toggle">
+              <img
+                className="cart-icon"
+                src="images/cart1.svg"
+                alt="cart icon"
+              />
+              <span className="cart-count">1</span>
             </div>
             {/* <button className="theme-toggle" aria-label="Toggle theme" onClick={handleThemeToggle}>
               <svg className={`icon moon-icon ${!isDark ? 'hidden' : ''}`} viewBox="0 0 24 24" width={20} height={20}>

@@ -1,93 +1,93 @@
 import { useState } from "react";
 import DayaMarbleSlider from "./DayaMarbleSlider";
-const blackGraniteData = [
+const washBasin = [
   {
-    title: "Shanxi Black",
-    img: "images/marble_slab/granite/shanxiBlack.jpg",
+    title: "Luxury Bathroom Vanity",
+    img: "images/decorItems/luxuryBathroomVanity.jpg",
    
   },
   {
-    title: "Nero Marquina",
-    img: "images/marble_slab/granite/neroMarquina.jpg",
+    title: "Ivory Beige Matte Artificial Stone Oval",
+    img: "images/decorItems/IvoryBeigeMatteArtificialStoneOval.jpg",
     
   },
   {
-  title: "River Black Granite",
-    img: "images/marble_slab/granite/riverBlackGranite.jpg",
+  title: "Lotus Shaped Vessel Basin",
+  img: "images/decorItems/lotusShapedVesselBasin.jpg",
    
   },
   {
-    title: "New York Stone",
-    img: "images/marble_slab/granite/newYorkStone.jpg",
+    title: "Black Wash Besin",
+    img: "images/decorItems/blackWashBesin.jpg",
    
   },
 ];
-const whiteMarbleData = [
+const marbleTable = [
   {
-    title: "Vaitnam White Marble",
-    img: "images/marble_slab/whiteMarble/vaitnamWhitemarble.jpg",
+    title: "Natural Marble Creative Dining Table",
+    img: "images/decorItems/naturalMarbleCreativeDiningTable.jpg",
    
   },
   {
-    title: "Plain White Italian Marble",
-    img: "images/marble_slab/whiteMarble/plainWhiteItalianMarble.jpg",
+    title: "Black  Fluted Stone Pedestal",
+    img: "images/decorItems/blackFlutedStonePedestal.jpg",
     
   },
   {
-   title: "Makrana White Marble",
-    img: "images/marble_slab/whiteMarble/makranaWhiteMarble.jpg",
+   title: "Marble Cross form Table",
+    img: "images/decorItems/marbleCrossformTable.jpg",
    
   },
   {
-     title: "Albeta White Marble",
-    img: "images/marble_slab/whiteMarble/albetaWhiteMarble.jpg",
+     title: "Natural Marble Side Table",
+    img: "images/decorItems/naturalMarbleSideTable.jpg",
    
   },
 ];
-const greyItalianData = [
+const marbleLampPots = [
   {
-    title: "Gray italin Marble",
-    img: "images/marble_slab/grayMarble/grayitalinmarble.jpg",
+    title: "White Marble Lamp Post Design",
+    img: "images/decorItems/whiteMarbleLampPostDesign.jpg",
    
   },
   {
-    title: "Gray White Light Marble",
-    img: "images/marble_slab/grayMarble/grayWhiteLightColorMarble.jpg",
+    title: "Sculptural Marble Lamps",
+    img: "images/decorItems/bespokeSculpturalLighting.jpg",
     
   },
   {
-    title: "Silver Grey Italian Marble",
-    img: "images/marble_slab/grayMarble/silverGreyItalianMarble.jpg",
+    title: "Garden Statues",
+    img: "images/decorItems/gardenStatues.jpg",
    
   },
   {
-    title: "Tundra Grey Marble",
-    img: "images/marble_slab/grayMarble/tundraGreyMarble.jpg",
+    title: "Solar Abstract Ornament",
+    img: "images/decorItems/solarAbstractOrnament.jpg",
    
   },
 ];
 
 const MarbleSection = () => {
-  const [activeTab, setActiveTab] = useState("Black Granite");
-  const [activeTabData, setActiveTabData] = useState(blackGraniteData);
+  const [activeTab, setActiveTab] = useState("Wash Basin");
+  const [activeTabData, setActiveTabData] = useState(washBasin);
 
-  const categories = ["Black Granite", "White Makrana Marble", "Grey Italian Marble"];
+  const categories = ["Wash Basin", "Marble Table", "Marble Lamp Pots"];
   const activeTabDataFunc = (category) => {
     setActiveTab(category);
     const tabData = {
-      "Grey Italian Marble": greyItalianData,
-      "White Makrana Marble": whiteMarbleData,
-      "Black Granite": blackGraniteData,
+      "Marble Lamp Pots": marbleLampPots,
+      "Marble Table": marbleTable,
+      "Wash Basin": washBasin,
     };
 
-    setActiveTabData(tabData[category] || blackGraniteData);
+    setActiveTabData(tabData[category] || washBasin);
   };
 
   return (
     <div className=" daya-marbale-section">
       <div className="text-center">
         <div className="title-section ">
-          <h3 style={{ marginBottom: "0px" }}>Marble Slabs</h3>
+          <h3 style={{ marginBottom: "0px" }}>Premium Marble Creations</h3>
           <img src="images/red-underline.png" alt="line" width={"108px"} />
         </div>
         <ul className="daya-list">
@@ -102,8 +102,8 @@ const MarbleSection = () => {
             </li>
           ))}
 
-          {/* <li>White Makrana Marble</li>
-          <li>Grey Italian Marble</li> */}
+          {/* <li>Marble Table</li>
+          <li>Marble Lamp Pots</li> */}
         </ul>
       </div>
       <DayaMarbleSlider activeTab={activeTab} activeTabData={activeTabData} />

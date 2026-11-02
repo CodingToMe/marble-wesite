@@ -26,11 +26,11 @@ const DayaMarbleSlider = ({ activeTab, activeTabData }) => {
     <section className="marble-section">
       {/* Left content updates based on active slide */}
       <div className="marble-content">
-        <h2>Explore Our Premium Marble Slabs</h2>
+        <h2>Explore Our Premium Marble Creations</h2>
         <p>
-          Explore our premium Black Granite and authentic Makrana White Marble
-          collection. Exceptional quality, natural beauty, and timeless elegance
-          for every space.
+          Discover our exquisite collection of handcrafted marble art, decor,
+          and timeless masterpieces. Elegantly crafted with premium quality
+          marble and exceptional craftsmanship.
         </p>
       </div>
 

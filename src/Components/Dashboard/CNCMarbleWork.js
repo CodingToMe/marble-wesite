@@ -1,30 +1,138 @@
 import React, { useState } from "react";
 
 const CNCMarbleSection = () => {
-  const cardsData = [
+  const marbleDecorData = [
     {
-      id: 1,
-      img: "https://picsum.photos/id/1015/400/300",
-      title: "Elegant Marble Design",
-      desc: "High precision CNC engraving for luxury interiors.",
-      heading:"Wooden Work",
-      heading_desc:"High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors."
+      heading: "Marble Fountain",
+      pera: "Elegant marble fountains crafted to bring beauty, luxury, and a peaceful atmosphere to your spaces. Custom designs available.",
+      data: [
+        {
+          id: 1,
+          img: "images/decorItems/fountains/gardanFountain.jpg",
+          title: "Garden Fountain",
+          desc: "Elegant Marble Fountains for Beautiful Gardens.",
+          heading: "Marble Fountain",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+        {
+          id: 2,
+          img: "images/decorItems/fountains/wallBlackfountain.jpg",
+          title: "Wall Fountain",
+          desc: "Elegant Black Marble Wall Fountains.",
+          heading: "Stone Work",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+        {
+          id: 3,
+          img: "images/decorItems/fountains/flowerPortfountain.jpg",
+          title: "Flower Port Fountain",
+          desc: "Beautiful 3D CNC designs carved in premium marble.",
+          heading: "Bros Work",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+      ],
     },
     {
-      id: 2,
-      img: "https://picsum.photos/id/1016/400/300",
-      title: "CNC Wall Art",
-      desc: "Custom CNC cut marble patterns for modern homes.",
-      heading:"Stone Work",
-      heading_desc:"High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors."
+      heading: "Flower Pots & Vases",
+      pera: "Beautifully handcrafted marble pots and vases that add a touch of elegance to your home and garden.",
+      data: [
+        {
+          id: 1,
+              img: "images/decorItems/flowerPotsVases/flowerPotsVases.jpg",
+          title: "Elegant Marble Design",
+          desc: "Beautifully Crafted Marble Flower Pots and Decorative Vases.",
+          heading: "Marble Fountain",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+        {
+          id: 2,
+          img: "images/decorItems/flowerPotsVases/whiteAndBrownLivingRoom.jpg",
+          title: "White And Brown Flower Pots",
+          desc: "Custom CNC cut marble patterns for modern homes.",
+          heading: "Stone Work",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+        {
+          id: 3,
+          img: "images/decorItems/flowerPotsVases/12ElegantFlowerVaseStyling.jpg",
+          title: "12 Elegant Flower Vase Styling",
+          desc: "12 Beautifully Crafted Marble Flower Vases for Elegant Spaces.",
+          heading: "Bros Work",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+      ],
     },
     {
-      id: 3,
-      img: "https://picsum.photos/id/1018/400/300",
-      title: "3D Marble Texture",
-      desc: "Beautiful 3D CNC designs carved in premium marble.",
-      heading:"Bros Work",
-      heading_desc:"High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors."
+      heading: "Home & Office Decor",
+      pera: "Premium marble decor pieces designed to enhance your interiors with timeless beauty and modern style.",
+      data: [
+        {
+          id: 1,
+          img: "images/decorItems/homeOfficeDecor/marbleBrassInlayDeskOrganizerSet.jpg",
+          title: "Elegant Marble and Brass Inlay Desk Organizer Set.",
+          desc: "High precision CNC engraving for luxury interiors.",
+          heading: "Marble Fountain",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+        {
+          id: 2,
+          img: "images/decorItems/homeOfficeDecor/marbleAccentBowl.jpg",
+          title: "Marble Accent Bowl",
+          desc: "Elegant Marble Accent Bowls for Stylish Interiors.",
+          heading: "Stone Work",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+        {
+          id: 3,
+          img: "images/decorItems/homeOfficeDecor/whiteMarbleLedTray.jpg",
+          title: "White Marble Led Tray",
+          desc: "Elegant White Marble LED Tray for Modern Decor.",
+          heading: "Bros Work",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+      ],
+    },
+    {
+      heading: "Kitchenware & Dining",
+      pera: "Stylish and durable marble kitchenware and dining accessories, perfect for adding luxury to everyday living.",
+      data: [
+        {
+          id: 1,
+          img: "images/decorItems/kitchenwareDining/rollingBoardRollingPin.jpg",
+          title: "Rolling Board Rolling Pin",
+          desc: "Premium Marble Rolling Board and Rolling Pin Set.",
+          heading: "Marble Fountain",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+        {
+          id: 2,
+          img: "images/decorItems/kitchenwareDining/mortarAndPestle.jpg",
+          title: "Mortar And Pestle",
+          desc: "Elegant Marble Mortar and Pestle for Everyday Use.",
+          heading: "Stone Work",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+        {
+          id: 3,
+          img: "images/decorItems/kitchenwareDining/marbleCutleryHolder.jpg",
+          title: "Marble Cutlery Holder",
+          desc: "Elegant Marble Cutlery Holder for Stylish Dining.",
+          heading: "Bros Work",
+          heading_desc:
+            "High precision CNC engraving for luxury interiors. High precision CNC engraving for luxury interiors.",
+        },
+      ],
     },
   ];
 
@@ -38,9 +146,9 @@ const CNCMarbleSection = () => {
       return newIndexes;
     });
   };
-  
+
   // ✅ Handle "Next" button click
-  const handleNextClick = (e, colIndex) => {
+  const handleNextClick = (e, colIndex,cardsData) => {
     e.stopPropagation(); // prevent parent click
     setCurrentIndexes((prev) => {
       const newIndexes = [...prev];
@@ -53,17 +161,17 @@ const CNCMarbleSection = () => {
   return (
     <section className="CNC-marble-section container">
       <div className="row">
-        {[0, 1, 2, 3].map((col) => (
+        {marbleDecorData.map((data, col) => (
           <div key={col} className="col-md-6">
-            <div style={{margin: "40px 0px 71px 65px"}}>
-            <h4 className="sub-heading">Wooden Work </h4>
-            <p>Explore our exclusive collection of design templates crafted by top designers worldwide.</p>  
+            <div style={{ margin: "40px 0px 71px 65px" }}>
+              <h4 className="sub-heading">{data?.heading}</h4>
+              <p>{data?.pera}</p>
             </div>
             <ul className="cards">
-              {cardsData.map((card, index) => {
+              {data?.data?.map((card, index) => {
                 const currentIndex = currentIndexes[col];
                 const isCurrent = index === currentIndex;
-                const isNext = index === (currentIndex + 1) % cardsData.length;
+                const isNext = index === (currentIndex + 1) % data?.data.length;
                 const isOut = !isCurrent && !isNext;
 
                 let cardClass = "card";
@@ -75,18 +183,27 @@ const CNCMarbleSection = () => {
                   <li
                     key={`${col}-${card.id}`}
                     className={cardClass}
-                    style={{ height: "330px", cursor: "pointer" }}
-                    onClick={(e) => handleNextClick(e, col)}
+                    style={{ height: "330px", cursor: "pointer" ,width:"80%"}}
+                    onClick={(e) => handleNextClick(e, col,data?.data)}
                   >
-                    <img className="card-image" src={card.img} alt={card.title} />
+                    {console.log(card ,"cardData")}
+                    <img
+                      className="card-image"
+                      src={card.img}
+                      alt={card.title}
+                    />
                     <div className="info">
                       <h3>{card.title}</h3>
                       <p className="text-white">{card.desc}</p>
-                      <button className="btn btn-danger-gradient" 
-                      onClick={() => handleCardClick(col, index)}
+                      <button
+                        className="btn btn-danger-gradient"
+                        onClick={() => handleCardClick(col, index)}
                       >
-                        View More <i class="fa fa-arrow-right ms-1" aria-hidden="true"></i> 
-                        
+                        View More{" "}
+                        <i
+                          class="fa fa-arrow-right ms-1"
+                          aria-hidden="true"
+                        ></i>
                       </button>
                     </div>
                   </li>
