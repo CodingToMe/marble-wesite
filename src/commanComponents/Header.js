@@ -336,6 +336,7 @@
 // export default Header
 
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [navActive, setNavActive] = useState(false);
@@ -429,6 +430,13 @@ const Header = () => {
 
     return () => clearTimeout(timeout);
   }, [isDark]);
+  const menuItems = [
+    { name: "Home", path: "/" },
+    { name: "Products", path: null },
+    { name: "Services", path: null },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
     <header className="header">
@@ -438,12 +446,12 @@ const Header = () => {
       >
         <div className="nav-brand">
           <img
-              src="images/wmaLogo.png"
-              style={{
-                height: "36px",
-                width: "65px",
-              }}
-            />
+            src="images/wmaLogo.png"
+            style={{
+              height: "36px",
+              width: "65px",
+            }}
+          />
           <span href="#" className="logo">
             White Marble Art
           </span>
@@ -455,8 +463,82 @@ const Header = () => {
             <span />
           </div>
         </div>
-        <div className="nav-menu" style={{fontSize:"14px"}}>
+        <div className="nav-menu" style={{ fontSize: "14px" }}>
           <ul className="nav-list">
+            {menuItems.map((item, index) => (
+              <li
+                key={index}
+                className={`nav-item ${
+                  ["Products", "Services"].includes(item.name)
+                    ? "has-dropdown"
+                    : ""
+                } ${dropdownActive === index ? "active" : ""}`}
+              >
+                {item.path ? (
+                  <Link to={item.path} className="nav-link">
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a
+                    href="#"
+                    className="nav-link"
+                    onClick={(e) => handleDropdownClick(index, e)}
+                  >
+                    {item.name}
+                    <svg
+                      className="icon chevron-icon"
+                      viewBox="0 0 24 24"
+                      width={14}
+                      height={14}
+                    >
+                      <path d="M7 10l5 5 5-5z" fill="currentColor" />
+                    </svg>
+                  </a>
+                )}
+
+                {item.name === "Products" && (
+                  <ul className="dropdown">
+                    <li>
+                      <Link to="/marble-mandir">Marble Mandir</Link>
+                    </li>
+                    <li>
+                      <Link to="/fountain">Fountain</Link>
+                    </li>
+                    <li>
+                      <Link to="/home-office-decor">Home Office Decor</Link>
+                    </li>
+                    <li>
+                      <Link to="/flower-pots">Flower Pots</Link>
+                    </li>
+                  </ul>
+                )}
+
+                {item.name === "Services" && (
+                  <ul className="dropdown">
+                    <li>
+                      <Link to="/custom-mandir-design">
+                        Custom Mandir Design
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/marble-architectural-solutions">
+                        Marble Architectural Solutions
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/marble-manufacturing">
+                        Marble Manufacturing
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/marble-installation">Marble Installation</Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+          {/* <ul className="nav-list">
             {[
               "Home",
               "Products",
@@ -489,7 +571,8 @@ const Header = () => {
                 {item === "Products" && (
                   <ul className="dropdown">
                     <li>
-                      <a href="#">Mandir</a>
+                      <Link to="/Marble-mandir">Marble Mandir</Link>
+                    
                     </li>
                     <li>
                       <a href="#">Fountain</a>
@@ -520,7 +603,7 @@ const Header = () => {
                 )}
               </li>
             ))}
-          </ul>
+          </ul> */}
           <div className="nav-actions">
             <div
               className={`search-container ${searchFocused ? "search-focused" : ""}`}

@@ -8,13 +8,12 @@ import {
   ContectUsSection,
   MarbleSection,
 } from "../Components/Dashboard";
-import CNCTool from "../Components/Dashboard/CNCTool";
-import YouTubeCarousel from "../Components/Dashboard/YouTubeCarousel";
+
 
 const RootPage = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <CarouselSection />
       <div className="container  rootpage mt-4">
         <div className="a1-section mt-4 text-center">
@@ -81,7 +80,7 @@ const RootPage = () => {
         <YouTubeCarousel />
       </div> */}
       <>
-        <Footer />
+        {/* <Footer /> */}
       </>
     </>
   );
