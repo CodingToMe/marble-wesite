@@ -503,12 +503,12 @@ const Header = () => {
                     </li>
                     <li>
                       <Link to="/fountain">Fountain</Link>
+                    </li>  
+                    <li>
+                      <Link to="/flower-pots">Flower Pots</Link>
                     </li>
                     <li>
                       <Link to="/home-office-decor">Home Office Decor</Link>
-                    </li>
-                    <li>
-                      <Link to="/flower-pots">Flower Pots</Link>
                     </li>
                   </ul>
                 )}

@@ -30,12 +30,12 @@ const CommonCard = ({ heading ,cardData}) => {
     //   </div>
     // </div>
      <div className="container comman-card-section">
-        <div className="title-section ">
+        {heading &&<div className="title-section ">
             <h3>{heading}</h3>
             <img src="images/red-underline.png" alt="line" width={"175px"} />
-          </div>
+          </div>}
       <div className="row g-4">
-        {cardData.slice(0, visibleCount).map((card) => (
+        {cardData?.slice(0, visibleCount).map((card) => (
           <div className="col-6 col-md-3" key={card.id}>
             <div className="card marble-card h-100">
               <img
@@ -53,7 +53,7 @@ const CommonCard = ({ heading ,cardData}) => {
       </div>
 
       <div className="text-center mt-4">
-        {visibleCount < cardData.length && (
+        {visibleCount < cardData?.length && (
           <button className="btn btn-dark px-4" onClick={handleShowMore}>
             Show More
           </button>

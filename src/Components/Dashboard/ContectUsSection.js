@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "react-select";
 
-const ContectUsSection = () => {
+const ContectUsSection = ({isShow =true}) => {
   const productOptions = [
     { value: "marble-mandir", label: "Marble Mandir" },
     { value: "fountain", label: "Marble Fountain" },
@@ -35,7 +35,7 @@ const ContectUsSection = () => {
                       style={{ textAlign: "start" }}
                     >
                       <div className="contact-heading">
-                        <h3 className="cl-mb-4">Enquire Now</h3>
+                        <h3 className="cl-mb-4">Send An Enquire</h3>
                         <img
                           src="images/red-underline.png"
                           alt="line"
@@ -171,6 +171,7 @@ const ContectUsSection = () => {
                         <li>Expert Craftsmanship &amp; Finishing</li>
                         <li>Custom Sizes, Patterns &amp; Designs</li>
                       </ul>
+                      {isShow && <div>
                       {/* <div className="dbox cl-w-100 cl-d-flex cl-align-items-start">
                         <div className="icon cl-d-flex cl-align-items-center cl-justify-content-center">
                           <span className="fa fa-map-marker"></span>
@@ -216,6 +217,7 @@ const ContectUsSection = () => {
                           </p>
                         </div>
                       </div> */}
+                      </div>}
                     </div>
                   </div>
                 </div>

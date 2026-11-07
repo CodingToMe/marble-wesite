@@ -2,8 +2,10 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cards = () => {
+  const navigate = useNavigate();
   const settings = {
     dots: true,
     infinite: true,
@@ -28,96 +30,67 @@ const Cards = () => {
     ],
   };
 
+  const mandirData = [
+    {
+      id: 1,
+      image: "images/mandir_images/mandir-card1.jpeg",
+      title:
+        "Exquisite Vietnam Marble Pooja Mandir – Luxury Handcrafted Sacred Temple",
+      link: "/Marble-mandir",
+    },
+    {
+      id: 2,
+      image: "images/mandir_images/mandir-card2.jpeg",
+      title:
+        "Premium Marble Temple – Elegant Traditional Craftsmanship with Timeless Beauty",
+      link: "/Marble-mandir",
+    },
+    {
+      id: 3,
+      image: "images/mandir_images/mar1.png",
+      title:
+        "Designer Vietnam Marble Mandir – Beautifully Crafted for Sacred Spaces",
+      link: "/Marble-mandir",
+    },
+    {
+      id: 4,
+      image: "images/mandir_images/mandir-card12.jpg",
+      title:
+        "Exclusive Marble Pooja Mandir – A Perfect Blend of Luxury and Devotion",
+      link: "/Marble-mandir",
+    },
+    {
+      id: 5,
+      image: "images/mandir_images/mandir-card4.jpeg",
+      title:
+        "Handcrafted Marble Temple – Bringing Spiritual Elegance to Your Home",
+      link: "/Marble-mandir",
+    },
+  ];
+  const handleViewMore = () => {
+    navigate("/marble-mandir");
+  };
   return (
     <div className="slider-cards">
       <Slider {...settings}>
-        <div
-          className="  container d-flex align-items-center justify-content-center"
-          style={{ height: "100vh" }}
-        >
+        {mandirData.map((item) => (
           <div
-            className=" cat-card card text-light border-0 "
-            //
+            key={item.id}
+            className="container d-flex align-items-center justify-content-center"
+            style={{ height: "100vh" }}
+            onClick={()=>handleViewMore()}
           >
-            <img
-              src="images/mandir_images/mandir-card1.jpeg"
-              // className="card-img"
-              alt="..."
-            />
-            <div className="card-img-overlay text-center"></div>
-            <div className="card-img-overlay ">
-            <p className="p para">Exquisite Vietnam Marble Pooja Mandir – Luxury Handcrafted Sacred Temple</p>
-            </div>
-          </div>
-        </div>
-        <div
-          className=" container d-flex align-items-center justify-content-center"
-          style={{ height: "100vh" }}
-        >
-          <div className="cat-card card text-light border-0 ">
-            <img
-              src="images/mandir_images/mandir-card2.jpeg"
-              // className="card-img"
-              alt="..."
-            />
-            <div className="card-img-overlay text-center"></div>
-            <div className="card-img-overlay ">
-            <p className="p para">Premium Marble Temple – Elegant Traditional Craftsmanship with Timeless Beauty</p>
-            </div>
-          </div>
-        </div>
+            <div className="cat-card card text-light border-0">
+              <img src={item.image} alt={item.title} />
 
-        <div
-          className="images/mandir_images/mandir-card2.jpeg"
-          style={{ height: "100vh" }}
-        >
-          <div className=" cat-card card text-light border-0 ">
-            <img
-              src="images/mandir_images/mar1.png"
-              // className="card-img"
-              alt="..."
-            />
-            <div className="card-img-overlay text-center"></div>
-            <div className="card-img-overlay ">
-            <p className="p para">Designer Vietnam Marble Mandir – Beautifully Crafted for Sacred Spaces</p>
-            </div>
-          </div>
-        </div>
+              <div className="card-img-overlay text-center"></div>
 
-        <div
-          className=" container d-flex align-items-center justify-content-center"
-          style={{ height: "100vh" }}
-        >
-          <div className="cat-card card text-light border-0 ">
-            <img
-              src="images/mandir_images/mandir-card12.jpg"
-              // className="card-img"
-              alt="..."
-            />
-            <div className="card-img-overlay text-center"></div>
-            <div className="card-img-overlay ">
-            <p className="p para">Exclusive Marble Pooja Mandir – A Perfect Blend of Luxury and Devotion</p>
+              <div className="card-img-overlay">
+                <p className="p para">{item.title}</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div
-          className=" container d-flex align-items-center justify-content-center"
-          style={{ height: "100vh" }}
-        >
-          <div className=" cat-card card text-light border-0 ">
-            <img
-              src="images/mandir_images/mandir-card4.jpeg"
-              // className="card-img"
-              alt="..."
-            />
-            
-            <div className="card-img-overlay text-center"></div>
-            <div className="card-img-overlay ">
-            <p className="p para">Handcrafted Marble Temple – Bringing Spiritual Elegance to Your Home</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </Slider>
     </div>
   );

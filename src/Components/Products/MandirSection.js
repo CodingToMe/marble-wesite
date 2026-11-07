@@ -5,6 +5,7 @@ import {
   CommonBanner,
   ContactUsCard,
 } from "../../commanComponents";
+import {mandirProducts} from '../../View/constantData'
 
 const MandirSection = () => {
   const cardData = [
@@ -149,7 +150,7 @@ const MandirSection = () => {
           image="images/mandir_images/mandir-card4.jpeg"
         />
 
-        <CommonCard heading={"Home Marble Mandir"} cardData={cardData} />
+        <CommonCard heading={"Home Marble Mandir"} cardData={mandirProducts} />
         <CommonBanner
           image="images/mandir_images/mandir-card-bg20.png"
           title="Heritage Peacock & Tree of Life Hand-Carved Marble Home Temple"

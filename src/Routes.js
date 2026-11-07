@@ -5,6 +5,9 @@ const MarbleMandir = React.lazy(()=>import('./Components/Products/MandirSection'
 const Fountain =React.lazy(()=>import('./Components/Products/Fountain'))
 const HomeOfficeDecor =React.lazy(()=>import('./Components/Products/HomeOfficeDecor'))
 const FlowerPotsAndVases =React.lazy(()=>import('./Components/Products/FlowerPotsAndVases'))
+const AboutUs =React.lazy(()=>import('./View/AboutUs'))
+const Contact =React.lazy(()=>import('./View/ContactUs'))
+const ProductView =React.lazy(()=>import('./Components/Products/ProductView'))
 
 
 const RenderRoutes = () => {
@@ -20,6 +23,9 @@ const RenderRoutes = () => {
         <Route path="/fountain" element={<Fountain/>} />
         <Route path="/home-office-decor" element={<HomeOfficeDecor/>} />
         <Route path="/flower-pots" element={<FlowerPotsAndVases/>} />
+        <Route path="/about" element={<AboutUs/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/product" element={<ProductView/>} />
 
         {/* 404 fallback if permissions are loaded */}
         {/* {isLoaded && (

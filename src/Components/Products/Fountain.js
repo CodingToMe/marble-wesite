@@ -5,6 +5,7 @@ import {
   CommonBanner,
   ContactUsCard,
 } from "../../commanComponents";
+import { fountainProducts } from "../../View/constantData";
 
 const Fountain = () => {
   const cardData = [
@@ -149,7 +150,7 @@ const Fountain = () => {
           image="images/decorItems/fountains/marbleFountain1.jpg"
         />
 
-        <CommonCard heading={"Marble Fountains"} cardData={cardData} />
+        <CommonCard heading={"Marble Fountains"} cardData={fountainProducts} />
         <CommonBanner
           image="images/decorItems/fountains/marbleFountainBg1.png"
           title="Hand-Carved Marble Wall Water Fountain featuring Majestic Horse Reliefs."

@@ -9,7 +9,7 @@ const ContactUsCard = ({contactCardsData,
   return (
     <section className="real-estate-hero">
       {/* Floating Property Cards */}
-      {contactCardsData.map((card) => (
+      {contactCardsData && contactCardsData?.map((card) => (
         <div className={`property-card ${card.className}`} key={card.id}>
           <img src={card.image} alt={card.title} />
 

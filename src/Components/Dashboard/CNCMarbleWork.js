@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CNCMarbleSection = () => {
+  const navigate =useNavigate()
   const marbleDecorData = [
     {
+      slug:"marble_fountain",
       heading: "Marble Fountain",
       pera: "Elegant marble fountains crafted to bring beauty, luxury, and a peaceful atmosphere to your spaces. Custom designs available.",
       data: [
@@ -36,6 +39,7 @@ const CNCMarbleSection = () => {
       ],
     },
     {
+      slug:"flower_pots",
       heading: "Flower Pots & Vases",
       pera: "Beautifully handcrafted marble pots and vases that add a touch of elegance to your home and garden.",
       data: [
@@ -69,6 +73,7 @@ const CNCMarbleSection = () => {
       ],
     },
     {
+      slug:"home_office_decor",
       heading: "Home & Office Decor",
       pera: "Premium marble decor pieces designed to enhance your interiors with timeless beauty and modern style.",
       data: [
@@ -102,6 +107,7 @@ const CNCMarbleSection = () => {
       ],
     },
     {
+      slug:"home_office_decor",
       heading: "Kitchenware & Dining",
       pera: "Stylish and durable marble kitchenware and dining accessories, perfect for adding luxury to everyday living.",
       data: [
@@ -139,13 +145,26 @@ const CNCMarbleSection = () => {
   // ✅ Fix: initialize 4 columns (not 3)
   const [currentIndexes, setCurrentIndexes] = useState([0, 0, 0, 0]);
 
-  const handleCardClick = (colIndex, cardIndex) => {
-    setCurrentIndexes((prev) => {
-      const newIndexes = [...prev];
-      newIndexes[colIndex] = cardIndex;
-      return newIndexes;
-    });
-  };
+const handleCardClick = (data, cardIndex) => {
+  const filterSlug = data.slug;
+
+  switch (filterSlug) {
+    case "home_office_decor":
+      navigate("/home-office-decor");
+      break;
+
+    case "marble_fountain":
+      navigate("/fountain");
+      break;
+
+    case "flower_pots":
+      navigate("/flower-pots");
+      break;
+
+    default:
+      navigate("/");
+  }
+};
 
   // ✅ Handle "Next" button click
   const handleNextClick = (e, colIndex,cardsData) => {
@@ -164,7 +183,7 @@ const CNCMarbleSection = () => {
         {marbleDecorData.map((data, col) => (
           <div key={col} className="col-md-6">
             <div style={{ margin: "40px 0px 71px 65px" }}>
-              <h4 className="sub-heading">{data?.heading}</h4>
+              <h4 className="sub-heading" onClick={() => handleCardClick(data)}>{data?.heading}</h4>
               <p>{data?.pera}</p>
             </div>
             <ul className="cards">
@@ -186,7 +205,7 @@ const CNCMarbleSection = () => {
                     style={{ height: "330px", cursor: "pointer" ,width:"80%"}}
                     onClick={(e) => handleNextClick(e, col,data?.data)}
                   >
-                    {console.log(card ,"cardData")}
+                    
                     <img
                       className="card-image"
                       src={card.img}
@@ -195,16 +214,16 @@ const CNCMarbleSection = () => {
                     <div className="info">
                       <h3>{card.title}</h3>
                       <p className="text-white">{card.desc}</p>
-                      <button
+                      {/* <button
                         className="btn btn-danger-gradient"
-                        onClick={() => handleCardClick(col, index)}
+                        onClick={() => handleCardClick(data, index)}
                       >
                         View More{" "}
                         <i
                           class="fa fa-arrow-right ms-1"
                           aria-hidden="true"
                         ></i>
-                      </button>
+                      </button> */}
                     </div>
                   </li>
                 );
