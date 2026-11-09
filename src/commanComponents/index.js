@@ -6,6 +6,7 @@ import ContactUsCard from "./ContactUsCard";
 import CommonStartInnerSection from "./CommonStartInnerSection";
 import FloatingButtons from "./FloatingButtons";
 import ScrollToTop from "./ScrollToTop";
+import Loader from "./Loader";
 export{
     Header,
     Footer,
@@ -14,6 +15,7 @@ export{
     ContactUsCard,
     CommonStartInnerSection,
     FloatingButtons,
-    ScrollToTop
+    ScrollToTop,
+    Loader
 
 }

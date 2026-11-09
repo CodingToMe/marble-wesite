@@ -446,7 +446,7 @@ const Header = () => {
       >
         <div className="nav-brand">
           <img
-            src="images/wmaLogo.png"
+            src="/images/wmaLogo.png"
             style={{
               height: "36px",
               width: "65px",
@@ -650,7 +650,7 @@ const Header = () => {
             <div className="theme-toggle">
               <img
                 className="cart-icon"
-                src="images/cart1.svg"
+                src="/images/cart1.svg"
                 alt="cart icon"
               />
               <span className="cart-count">1</span>

@@ -1,5 +1,13 @@
-import { useState } from "react";
-import { CommonCard } from "../../commanComponents";
+import { useEffect, useState } from "react";
+import { CommonCard, Loader } from "../../commanComponents";
+import { useParams } from "react-router-dom";
+import {
+  flowerPotProducts,
+  fountainProducts,
+  homeOfficeDecor,
+  mandirProducts,
+} from "../../View/constantData";
+import OrderModal from "./OrderModal";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "./SingleProduct.css";
 
@@ -13,100 +21,6 @@ const GALLERY = [
 
 const SIZES = ["L", "XL", "XS"];
 const COLORS = ["#816DFA", "#000000", "#B88E2F"];
-
- const cardData = [
-    {
-      id: 1,
-      image: "images/mandir_images/mandir-card1.jpeg",
-      title: "Card Title 1",
-      description:
-        "Vietnam Marble Mandir – Elegant design with premium craftsmanship and beautiful finishing.",
-    },
-    {
-      id: 2,
-      image: "images/mandir_images/mandir-card2.jpeg",
-      title: "Card Title 2",
-      description:
-        "Marble Mandir – A timeless temple design crafted with elegance and devotion.",
-    },
-    {
-      id: 3,
-      image: "images/mandir_images/mandir-card32.jpeg",
-      title: "Card Title 3",
-      description:
-        "Hand Carving – Intricate handmade patterns showcasing traditional artistic skills.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card4.jpeg",
-      title: "Card Title 4",
-      description:
-        "Fine Detailing – Beautiful decorative elements that enhance every design.",
-    },
-    {
-      id: 5,
-      image: "images/mandir_images/mandir-card12.jpg",
-      title: "Card Title 4",
-      description:
-        "Premium Finishing – Smooth surfaces with a refined and luxurious appearance.",
-    },
-    {
-      id: 6,
-      image: "images/mandir_images/mandir-card14.jpeg",
-      title: "Card Title 4",
-      description:
-        "Traditional Carving – Detailed craftsmanship inspired by timeless Indian artistry.",
-    },
-    {
-      id: 7,
-      image: "images/mandir_images/mandir-card16.jpeg",
-      title: "Card Title 4",
-      description:
-        "Luxury Mandir – Beautifully designed to create a peaceful sacred space.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card17.jpeg",
-      title: "Card Title 4",
-      description:
-        "Vietnam Marble – Premium marble known for its elegant appearance and natural beauty.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card18.jpeg",
-      title: "Card Title 4",
-      description:
-        "Custom Mandir – Personalized designs created to match your space and preferences.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card19.jpeg",
-      title: "Card Title 4",
-      description:
-        "Marble Craftsmanship – Expertly crafted designs with attention to every detail.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card20.jpeg",
-      title: "Card Title 4",
-      description:
-        "Handmade Mandir – Carefully crafted with traditional techniques and artistic precision.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card21.jpeg",
-      title: "Card Title 4",
-      description:
-        "Elegant Finishing – Perfectly polished edges and refined detailing.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card23.jpeg",
-      title: "Card Title 4",
-      description:
-        "Luxury Marble Temple – A beautiful combination of carving, detailing, and premium finishing.",
-    },
-  ];
 
 const TABS = ["Description", "Additional Information", "Reviews [5]"];
 
@@ -155,11 +69,11 @@ const SocialIcons = {
   },
   instagram: {
     icon: <i className="bi bi-instagram me-2"></i>,
-    url: "https://instagram.com", 
+    url: "https://instagram.com",
   },
   facebook: {
     icon: <i className="bi bi-facebook me-2"></i>,
-    url: "https://facebook.com", // 
+    url: "https://facebook.com", //
   },
 };
 
@@ -170,6 +84,55 @@ export default function ProductView() {
   //   const [color, setColor] = useState(COLORS[2]);
   //   const [qty, setQty] = useState(1);
   const [tab, setTab] = useState(TABS[0]);
+  const [productData, setProductData] = useState("");
+  const { id } = useParams();
+  const [orderRelatedData, setOrderRelatedData] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  useEffect(() => {
+    const orderData = JSON.parse(localStorage.getItem("orderData") || "null");
+
+    let orderRelatedData = [];
+
+    switch (id) {
+      case "marble-mandir":
+        orderRelatedData = mandirProducts;
+        break;
+
+      case "fountain":
+        orderRelatedData = fountainProducts;
+        break;
+      case "flower-pot-vases":
+        orderRelatedData = flowerPotProducts;
+        break;
+      case "home-office-decore":
+        orderRelatedData = homeOfficeDecor
+        break;
+      default:
+        orderRelatedData = [];
+    }
+
+    const filterOrderData = orderRelatedData.find(
+      (item) => item?.id === orderData?.id,
+    );
+
+    setProductData(filterOrderData || null);
+    setOrderRelatedData(orderRelatedData);
+  }, [id]);
+
+  const setOderData = (data) => {
+    setProductData(data);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const handleOrder = (data) => {
+    setSelectedProduct(data);
+    setIsOpen(true);
+  };
 
   return (
     <div className="sp">
@@ -180,58 +143,62 @@ export default function ProductView() {
           <div className="col-12 col-lg-6">
             <div className="d-flex flex-column-reverse flex-md-row gap-3 gap-md-4">
               <div className="sp-thumbs d-flex flex-row flex-md-column gap-3">
-                {GALLERY.map((src, i) => (
+                {productData?.images?.map((item, i) => (
                   <button
-                    key={src}
+                    key={i}
                     type="button"
                     className={`sp-thumb ${i === activeImg ? "active" : ""}`}
                     onClick={() => setActiveImg(i)}
                     aria-label={`Show image ${i + 1}`}
                   >
-                    <img src={src} alt="" />
+                    <img
+                      // src={item?.trim() || ""}
+                      src={`/${item?.trim()}`}
+                      alt={`Product ${i + 1}`}
+                    />
                   </button>
                 ))}
               </div>
+
               <div className="sp-main-img flex-grow-1">
-                <img src={GALLERY[activeImg]} alt="Asgaard sofa" />
+                <img
+                  src={`/${productData?.images?.[activeImg]}`}
+                  alt="Product Image"
+                />
               </div>
             </div>
           </div>
 
           {/* Details */}
           <div className="col-12 col-lg-6">
-            <h1 className="sp-title">Asgaard sofa</h1>
+            <h1 className="sp-title">{productData?.title}</h1>
             {/* <p className="sp-price">Rs. 250,000.00</p> */}
 
             <div className="d-flex align-items-center gap-3 mb-3">
-              <Stars rating={4.5} />
+              <Stars rating={productData?.rating} />
               <span className="sp-divider-v" />
-              <span className="sp-muted-sm">5 Customer Review</span>
+              <span className="sp-muted-sm">
+                {productData?.reviewCount} Customer Review
+              </span>
             </div>
 
-            <p className="sp-short-desc">
-              Setting the bar as one of the loudest speakers in its class, the
-              Kilburn is a compact, stout-hearted hero with a well-balanced
-              audio which boasts a clear midrange and extended highs for a
-              sound.
-            </p>
+            <p className="sp-short-desc">{productData?.description}</p>
             <dl className="sp-meta mb-3">
               <div>
-                <dt>Sr No</dt>
-                <dd>SS001</dd>
+                <dt>Code</dt>
+                <dd>{productData?.id}</dd>
               </div>
               <div>
                 <dt>Category</dt>
-                <dd>Sofas</dd>
+                <dd>{productData?.category}</dd>
               </div>
               <div>
                 <dt>Tags</dt>
-                <dd>Sofa, Chair, Home, Shop</dd>
+                <dd>{productData?.tags?.join(", ")}</dd>
               </div>
               <div>
                 <dt>Share</dt>
                 <dd className="d-flex gap-3 align-items-center">
-                 
                   {Object.entries(SocialIcons).map(([name, item]) => (
                     <a
                       key={name}
@@ -291,7 +258,7 @@ export default function ProductView() {
               <div className="d-flex gap-3 flex-wrap justify-content-center">
                 <button
                   className="btn btn-primary-orange"
-                  onClick={() => (window.location.href = "tel:+916367877532")}
+                  onClick={() => handleOrder(productData)}
                 >
                   Order Now <i className="bi bi-arrow-right ms-2"></i>
                 </button>
@@ -312,9 +279,27 @@ export default function ProductView() {
       </section>
 
       {/* ===== Related products ===== */}
-                  <hr/>
-      <CommonCard heading={"Related Product"} cardData={cardData}/>
-    
+      <hr />
+      {!orderRelatedData?.length ? (
+        <Loader />
+      ) : orderRelatedData?.length > 0 ? (
+        <CommonCard
+          heading="Related Product"
+          cardData={orderRelatedData}
+          componentType={"inner"}
+          navigateFuc={setOderData}
+        />
+      ) : (
+        <p className="text-center">Related Products Not Found!</p>
+      )}
+
+      {isOpen && (
+        <OrderModal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          productData={selectedProduct}
+        />
+      )}
     </div>
   );
 }

@@ -6,101 +6,11 @@ import {
   ContactUsCard,
 } from "../../commanComponents";
 import {mandirProducts} from '../../View/constantData'
+import { useNavigate } from "react-router-dom";
 
 const MandirSection = () => {
-  const cardData = [
-    {
-      id: 1,
-      image: "images/mandir_images/mandir-card1.jpeg",
-      title: "Card Title 1",
-      description:
-        "Vietnam Marble Mandir – Elegant design with premium craftsmanship and beautiful finishing.",
-    },
-    {
-      id: 2,
-      image: "images/mandir_images/mandir-card2.jpeg",
-      title: "Card Title 2",
-      description:
-        "Marble Mandir – A timeless temple design crafted with elegance and devotion.",
-    },
-    {
-      id: 3,
-      image: "images/mandir_images/mandir-card32.jpeg",
-      title: "Card Title 3",
-      description:
-        "Hand Carving – Intricate handmade patterns showcasing traditional artistic skills.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card4.jpeg",
-      title: "Card Title 4",
-      description:
-        "Fine Detailing – Beautiful decorative elements that enhance every design.",
-    },
-    {
-      id: 5,
-      image: "images/mandir_images/mandir-card12.jpg",
-      title: "Card Title 4",
-      description:
-        "Premium Finishing – Smooth surfaces with a refined and luxurious appearance.",
-    },
-    {
-      id: 6,
-      image: "images/mandir_images/mandir-card14.jpeg",
-      title: "Card Title 4",
-      description:
-        "Traditional Carving – Detailed craftsmanship inspired by timeless Indian artistry.",
-    },
-    {
-      id: 7,
-      image: "images/mandir_images/mandir-card16.jpeg",
-      title: "Card Title 4",
-      description:
-        "Luxury Mandir – Beautifully designed to create a peaceful sacred space.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card17.jpeg",
-      title: "Card Title 4",
-      description:
-        "Vietnam Marble – Premium marble known for its elegant appearance and natural beauty.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card18.jpeg",
-      title: "Card Title 4",
-      description:
-        "Custom Mandir – Personalized designs created to match your space and preferences.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card19.jpeg",
-      title: "Card Title 4",
-      description:
-        "Marble Craftsmanship – Expertly crafted designs with attention to every detail.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card20.jpeg",
-      title: "Card Title 4",
-      description:
-        "Handmade Mandir – Carefully crafted with traditional techniques and artistic precision.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card21.jpeg",
-      title: "Card Title 4",
-      description:
-        "Elegant Finishing – Perfectly polished edges and refined detailing.",
-    },
-    {
-      id: 4,
-      image: "images/mandir_images/mandir-card23.jpeg",
-      title: "Card Title 4",
-      description:
-        "Luxury Marble Temple – A beautiful combination of carving, detailing, and premium finishing.",
-    },
-  ];
+  const navigate =useNavigate()
+  
   const contactCardsData = [
     {
       id: 1,
@@ -139,6 +49,10 @@ const MandirSection = () => {
   const handleOrder = () => {
     console.log("Order Now clicked");
   };
+  const navigateFuc =(data)=>{
+    localStorage.setItem("orderData", JSON.stringify(data));
+    navigate(`/product/${data.slug}`);
+  }
   return (
     <div>
       <div className="mandir-section ">
@@ -150,7 +64,7 @@ const MandirSection = () => {
           image="images/mandir_images/mandir-card4.jpeg"
         />
 
-        <CommonCard heading={"Home Marble Mandir"} cardData={mandirProducts} />
+        <CommonCard heading={"Home Marble Mandir"} cardData={mandirProducts} navigateFuc={navigateFuc}/>
         <CommonBanner
           image="images/mandir_images/mandir-card-bg20.png"
           title="Heritage Peacock & Tree of Life Hand-Carved Marble Home Temple"

@@ -6,105 +6,15 @@ import {
   ContactUsCard,
 } from "../../commanComponents";
 import { fountainProducts } from "../../View/constantData";
+import { useNavigate } from "react-router-dom";
 
 const Fountain = () => {
-  const cardData = [
-    {
-      id: 1,
-      image: "images/decorItems/fountains/marbleFountain7.jpg",
-      title: "Card Title 1",
-      description:
-        "Beautifully crafted with elegant designs and exceptional finishing.",
-    },
-    {
-      id: 2,
-      image: "images/decorItems/fountains/marbleFountain8.jpg",
-      title: "Card Title 2",
-      description:
-        "Luxury Garden Fountain – Designed with intricate carvings to enhance your outdoor spaces.",
-    },
-    {
-      id: 3,
-      image: "images/decorItems/fountains/marbleFountain9.jpg",
-      title: "Card Title 3",
-      description:
-        "Elegant Marble Water Fountain – A perfect combination of artistic craftsmanship and timeless beauty.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/fountains/Modern Outdoor Fountain Resin Outdoor Garden Fountains.jpg",
-      title: "Card Title 4",
-      description:
-        "Handcrafted Marble Fountain – Featuring detailed patterns, premium quality and luxurious appeal."
-    },
-    {
-      id: 5,
-      image: "images/decorItems/fountains/Versailles Garden Pond Fountain.jpg",
-      title: "Card Title 4",
-      description:
-        "Premium Finishing – Smooth surfaces with a refined and luxurious appearance.",
-    },
-    {
-      id: 6,
-      image: "images/decorItems/fountains/Luxury LED Garden Water Fountain.jpg",
-      title: "Card Title 4",
-      description:
-        "Wall Fountain -Traditional Carving – Detailed craftsmanship inspired by timeless Indian artistry.",
-    },
-    {
-      id: 7,
-      image: "images/decorItems/fountains/marbleFountain4.jpg",
-      title: "Card Title 5",
-      description:
-        "Classic Marble Fountain – Blending traditional artistry with elegant architectural designs.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/fountains/IndoorWarterFountain.jpeg",
-      title: "Card Title 6",
-      description:
-        "Luxury Indoor Fountain – Beautifully crafted to create a peaceful and refreshing atmosphere.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/fountains/minilotusWaterFountain.jpeg",
-      title: "Card Title 7",
-      description:
-        "Premium Marble Fountain – Expertly crafted with artistic detailing and timeless elegance.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/fountains/flowerPortfountain.jpg",
-      title: "Card Title 4",
-      description:
-        "Artistic Vietnam Mandir – Expertly carved with beautiful patterns and exceptional craftsmanship.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/fountains/Robbiana Wall Outdoor Water Fountain.jpg",
-      title: "Card Title 4",
-      description:
-        "Classic Marble Fountain – Blending traditional artistry with elegant architectural designs.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/fountains/Sculptural Indoor Fountain with Ambient Lighting.jpg",
-      title: "Card Title 4",
-      description:
-        "Elegant Finishing – Perfectly polished edges and refined detailing.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/fountains/marbleFountain6.jpg",
-      title: "Card Title 4",
-      description:
-        "Vietnam White Marble Mandir – A symbol of purity, devotion and timeless craftsmanship.",
-    },
-  ];
+  const navigate = useNavigate();
   const contactCardsData = [
     {
       id: 1,
-      image: "images/decorItems/fountains/Modern Outdoor Fountain Resin Outdoor Garden Fountains.jpg",
+      image:
+        "images/decorItems/fountains/Modern Outdoor Fountain Resin Outdoor Garden Fountains.jpg",
       title: "Garden Fountain",
       // title: "PEACOCK DESIGN",
       details: "6 ft × 4 ft = 24 sq. ft.",
@@ -121,7 +31,8 @@ const Fountain = () => {
     {
       id: 3,
 
-      image: "images/decorItems/fountains/Marble Fountain Styles for Your Garden.jpg",
+      image:
+        "images/decorItems/fountains/Marble Fountain Styles for Your Garden.jpg",
       title: "Marble Fountain",
 
       details: "Crafted to Your Vision",
@@ -129,7 +40,8 @@ const Fountain = () => {
     },
     {
       id: 4,
-      image: "images/decorItems/fountains/Charming Small Courtyard Fountain Ideas.jpg",
+      image:
+        "images/decorItems/fountains/Charming Small Courtyard Fountain Ideas.jpg",
       title: "Courtyard Fountain",
 
       details: "Customization",
@@ -138,6 +50,10 @@ const Fountain = () => {
   ];
   const handleOrder = () => {
     console.log("Order Now clicked");
+  };
+  const navigateFuc = (data) => {
+    localStorage.setItem("orderData", JSON.stringify(data));
+    navigate(`/product/${data.slug}`);
   };
   return (
     <div>
@@ -150,7 +66,11 @@ const Fountain = () => {
           image="images/decorItems/fountains/marbleFountain1.jpg"
         />
 
-        <CommonCard heading={"Marble Fountains"} cardData={fountainProducts} />
+        <CommonCard
+          heading={"Marble Fountains"}
+          cardData={fountainProducts}
+          navigateFuc={navigateFuc}
+        />
         <CommonBanner
           image="images/decorItems/fountains/marbleFountainBg1.png"
           title="Hand-Carved Marble Wall Water Fountain featuring Majestic Horse Reliefs."

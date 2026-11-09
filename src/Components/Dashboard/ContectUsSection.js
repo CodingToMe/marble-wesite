@@ -1,26 +1,9 @@
 import React from "react";
 import Select from "react-select";
+import { estimatedPrice, productOptions } from "../../View/constantData";
 
 const ContectUsSection = ({isShow =true}) => {
-  const productOptions = [
-    { value: "marble-mandir", label: "Marble Mandir" },
-    { value: "fountain", label: "Marble Fountain" },
-    { value: "home-decor", label: "Home Decor" },
-    { value: "tulsi-pot", label: "Tulsi Pot" },
-    { value: "marble-slab", label: "Marble Slab" },
-    { value: "kitchenware-dining", label: "Kitchenware & Dining" },
-    { value: "candle-warmer-lamp", label: "Candle Warmer Lamp" },
-  ];
-  const estimatedPrice = [
-    { value: "1-2-lakh", label: "₹1 – ₹2 Lakh" },
-    { value: "2-3-lakh", label: "₹2 – ₹3 Lakh" },
-    { value: "3-5-lakh", label: "₹3 – ₹5 Lakh" },
-    { value: "5-10-lakh", label: "₹5 – ₹10 Lakh" },
-    { value: "10-15-lakh", label: "₹10 – ₹15 Lakh" },
-    { value: "15-20-lakh", label: "₹15 – ₹20 Lakh" },
-    { value: "20-25-lakh", label: "₹20 – ₹25 Lakh" },
-    { value: "above-25-lakh", label: "Above ₹25 Lakh" },
-  ];
+
   return (
     <div>
       <section className="ftco-section">

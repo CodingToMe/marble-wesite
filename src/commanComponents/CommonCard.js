@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CommonCard = ({ heading ,cardData}) => {
+const CommonCard = ({ heading ,cardData,navigateFuc}) => {
  
 
 
@@ -13,7 +13,7 @@ const CommonCard = ({ heading ,cardData}) => {
   const handleShowLess = () => {
     setVisibleCount(8);
   };
-
+console.log(cardData,"sdflkkjdflk")
   return (
     // <div className="container">
     //   <div className="row g-4">
@@ -32,14 +32,14 @@ const CommonCard = ({ heading ,cardData}) => {
      <div className="container comman-card-section">
         {heading &&<div className="title-section ">
             <h3>{heading}</h3>
-            <img src="images/red-underline.png" alt="line" width={"175px"} />
+            <img src="/images/red-underline.png" alt="line" width={"175px"} />
           </div>}
       <div className="row g-4">
         {cardData?.slice(0, visibleCount).map((card) => (
           <div className="col-6 col-md-3" key={card.id}>
-            <div className="card marble-card h-100">
+            <div className="card marble-card h-100" onClick={()=>navigateFuc(card)}>
               <img
-                src={card.image}
+                src={`/${card.image}`}
                 className="card-img-top"
                 alt={card.title}
               />

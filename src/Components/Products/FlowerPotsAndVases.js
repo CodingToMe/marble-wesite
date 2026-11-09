@@ -5,72 +5,15 @@ import {
   CommonBanner,
   ContactUsCard,
 } from "../../commanComponents";
+import { flowerPotProducts } from "../../View/constantData";
+import { useNavigate } from "react-router-dom";
 
 const FlowerPotsAndVases = () => {
-  const cardData = [
-    {
-      id: 1,
-      image:
-        "images/decorItems/flowerPotsVases/aestheticOutdoorTulsiPlanter.jpg",
-      title: "Card Title 1",
-      description:
-        "Aesthetic Outdoor Tulsi Planter – Traditional elegance with beautiful craftsmanship for your sacred outdoor spaces.",
-    },
-    {
-      id: 2,
-      image:
-        "images/decorItems/flowerPotsVases/Luxury Black Marble Flower Pots.jpg",
-      title: "Card Title 2",
-      description:
-        "Luxury Black Marble Flower Pots – Elegant designs with premium craftsmanship, adding a sophisticated touch to your indoor and outdoor spaces.",
-    },
-    {
-      id: 3,
-      image: "images/decorItems/flowerPotsVases/Tulsi port.jpeg",
-      title: "Card Title 3",
-      description:
-        "Handcrafted Marble Tulsi Pot – Traditional Beauty, Elegant Sacred Design.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/flowerPotsVases/tulsi1.jpg",
-      title: "Card Title 4",
-      description: " Tulsi – Elegant Traditional Marble Tulsi Planter.",
-    },
-    {
-      id: 5,
-      image: "images/decorItems/flowerPotsVases/flowerPotsVases.jpg",
-      title: "Card Title 4",
-      description:
-        "Premium Finishing – Smooth surfaces with a refined and luxurious appearance.",
-    },
-    {
-      id: 6,
-      image: "images/decorItems/flowerPotsVases/Table Centerpiece.jpg",
-      title: "Card Title 4",
-      description:
-        "Luxury Marble Table Centerpiece – Elegant Craftsmanship for Sophisticated Table Decor.",
-    },
-    {
-      id: 7,
-      image: "images/decorItems/flowerPotsVases/Blumenvase.jpg",
-      title: "Card Title 5",
-      description:
-        "Classic Marble Blumen vase – Blending traditional artistry with elegant architectural designs.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/flowerPotsVases/premium Marble Flower.jpg",
-      title: "Card Title 6",
-      description:
-        "Luxury Indoor premium Marble Flower pot – Beautifully crafted to create a peaceful and refreshing atmosphere.",
-    },
-  ];
+ const navigate =useNavigate()
   const contactCardsData = [
     {
       id: 1,
-      image:
-        "images/decorItems/flowerPotsVases/Blumenvase.jpg",
+      image: "images/decorItems/flowerPotsVases/Blumenvase.jpg",
       title: "Blumen Vase",
       // title: "PEACOCK DESIGN",
       details: "Custom",
@@ -78,7 +21,7 @@ const FlowerPotsAndVases = () => {
     },
     {
       id: 2,
-     image: "images/decorItems/flowerPotsVases/Table Centerpiece.jpg",
+      image: "images/decorItems/flowerPotsVases/Table Centerpiece.jpg",
       title: "Table Centerpiece ",
 
       details: "Custom",
@@ -96,8 +39,7 @@ const FlowerPotsAndVases = () => {
     },
     {
       id: 4,
-      image:
-        "images/decorItems/flowerPotsVases/flowervase.jpeg",
+      image: "images/decorItems/flowerPotsVases/flowervase.jpeg",
       title: "flower Vase",
 
       details: "Customization",
@@ -106,6 +48,10 @@ const FlowerPotsAndVases = () => {
   ];
   const handleOrder = () => {
     console.log("Order Now clicked");
+  };
+  const navigateFuc = (data) => {
+    localStorage.setItem("orderData", JSON.stringify(data));
+    navigate(`/product/${data.slug}`);
   };
   return (
     <div>
@@ -118,7 +64,11 @@ const FlowerPotsAndVases = () => {
           image="images/decorItems/flowerPotsVases/12ElegantFlowerVaseStyling.jpg"
         />
 
-        <CommonCard heading={"Flower Pots And Vases"} cardData={cardData} />
+        <CommonCard
+          heading={"Flower Pots And Vases"}
+          cardData={flowerPotProducts}
+          navigateFuc={navigateFuc}
+        />
         <CommonBanner
           image="images/decorItems/flowerPotsVases/tulsipot2.png"
           title="Hand-Carved White Marble Tulsi Vrindavan Planter"

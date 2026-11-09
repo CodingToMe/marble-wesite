@@ -25,7 +25,7 @@ const RenderRoutes = () => {
         <Route path="/flower-pots" element={<FlowerPotsAndVases/>} />
         <Route path="/about" element={<AboutUs/>} />
         <Route path="/contact" element={<Contact/>} />
-        <Route path="/product" element={<ProductView/>} />
+        <Route path="/product/:id" element={<ProductView/>} />
 
         {/* 404 fallback if permissions are loaded */}
         {/* {isLoaded && (

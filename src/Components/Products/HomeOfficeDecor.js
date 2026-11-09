@@ -5,101 +5,12 @@ import {
   CommonBanner,
   ContactUsCard,
 } from "../../commanComponents";
+import { homeOfficeDecor } from "../../View/constantData";
+import { useNavigate } from "react-router-dom";
 
 const HomeOfficeDecor = () => {
-  const cardData = [
-    {
-      id: 1,
-      image: "images/decorItems/bathroomAccessories.jpeg",
-      title: "Card Title 1",
-      description:
-        "Beautifully crafted with elegant designs and exceptional finishing.",
-    },
-    {
-      id: 2,
-      image: "images/decorItems/bespokeSculpturalLighting.jpg",
-      title: "Card Title 2",
-      description:
-        "This hand-carved stone floor lamp features a spiraling flame design with warm internal illumination, creating a dramatic luxury centerpiece for modern homes and offices.",
-    },
-    {
-      id: 3,
-      image: "images/decorItems/blackFlutedStonePedestal.jpg",
-      title: "Card Title 3",
-      description:
-        "Hand-carved black fluted stone pedestal for displaying luxury home decor table.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/blackWashBesin.jpg",
-      title: "Card Title 4",
-      description:
-        "Hand-carved black natural stone washbasin with a sleek matte finish."
-    },
-    {
-      id: 5,
-      image: "images/decorItems/lotusShapedVesselBasin.jpg",
-      title: "Card Title 4",
-      description:
-        "Artisan natural stone vessel basin, hand-carved into a blooming lotus shape.",
-    },
-    {
-      id: 6,
-      image: "images/decorItems/gardenStatues.jpg",
-      title: "Card Title 4",
-      description:
-        "Traditional Carving – Detailed craftsmanship inspired by timeless Indian artistry.",
-    },
-    {
-      id: 7,
-      image: "images/decorItems/naturalMarbleCreativeDiningTable.jpg",
-      title: "Card Title 5",
-      description:
-        "Luxury natural marble dining table with a creative hand-sculpted stone base.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/solarAbstractOrnament.jpg",
-      title: "Card Title 6",
-      description:
-        "Luxury Indoor Solar Abstract Ornament – Beautifully crafted to create a peaceful and refreshing atmosphere.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/whiteMarbleLampPostDesign.jpg",
-      title: "Card Title 7",
-      description:
-        "Hand-carved white marble lamp post featuring elegant architectural curves and glowing ambient light.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/naturalMarbleSideTable.jpg",
-      title: "Card Title 4",
-      description:
-        "Hand-sculpted natural marble side table showcasing elegant veins and timeless architectural craftsmanship.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/candleWarmer-Lamp.jpeg",
-      title: "Card Title 4",
-      description:
-        "Elegant natural stone candle warmer lamp that melts wax safely with soft, ambient heat.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/IvoryBeigeMatteArtificialStoneOval.jpg",
-      title: "Card Title 4",
-      description:
-        "Smooth ivory beige artificial stone oval basin with a refined matte finish.",
-    },
-    {
-      id: 4,
-      image: "images/decorItems/marble candles.jpg",
-      title: "Card Title 4",
-      description:
-        "Hand-carved natural marble candle holder designed for serene, ambient luxury decor.",
-    },
-  ];
+  const navigate = useNavigate();
+
   const contactCardsData = [
     {
       id: 1,
@@ -138,6 +49,10 @@ const HomeOfficeDecor = () => {
   const handleOrder = () => {
     console.log("Order Now clicked");
   };
+  const navigateFuc = (data) => {
+    localStorage.setItem("orderData", JSON.stringify(data));
+    navigate(`/product/${data.slug}`);
+  };
   return (
     <div>
       <div className="mandir-section ">
@@ -149,7 +64,10 @@ const HomeOfficeDecor = () => {
           image="images/decorItems/bathroomAccessories.jpeg"
         />
 
-        <CommonCard heading={"Handicraft Items"} cardData={cardData} />
+        <CommonCard heading={"Handicraft Items"}
+         cardData={homeOfficeDecor}
+         navigateFuc={navigateFuc}
+         />
         <CommonBanner
           image="images/decorItems/diya-bg.png"
           title="Handcrafted marble diya and brass tealight holders for festive glow."
