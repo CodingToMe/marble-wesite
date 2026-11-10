@@ -2,214 +2,136 @@ import React from "react";
 import Select from "react-select";
 import { estimatedPrice, productOptions } from "../../View/constantData";
 
-const ContectUsSection = ({isShow =true}) => {
-
+const ContectUsSection = ({ isShow = true }) => {
   return (
-    <div>
-      <section className="ftco-section">
-        <div className="cl-container">
-          <div className="cl-row cl-justify-content-center">
-            <div className="cl-col-md-12">
-              <div className="wrapper">
-                <div className="cl-row cl-no-gutters">
-                  <div className="cl-col-lg-8 cl-col-md-7 cl-order-md-last cl-d-flex cl-align-items-stretch">
-                    <div
-                      className="contact-wrap cl-w-100 cl-p-md-5 cl-p-4"
-                      style={{ textAlign: "start" }}
-                    >
-                      <div className="contact-heading">
-                        <h3 className="cl-mb-4">Send An Enquire</h3>
-                        <img
-                          src="images/red-underline.png"
-                          alt="line"
-                          width={"120px"}
-                        />
-                      </div>
+    <section className="contactUsSection">
+      <div className="cu-wrapper">
+        {/* ---------- Form ---------- */}
+        <div className="cu-form-side mb-2">
+          <div className="cu-heading">
+            <h3>Send An Enquire</h3>
+            <img src="images/red-underline.png" alt="line" width="120" />
+          </div>
 
-                      <form
-                        id="contactForm"
-                        name="contactForm"
-                        className="contactForm"
-                      >
-                        <div className="cl-row">
-                          <div className=" row cl-col-md-12">
-                            <div className="col-md-6">
-                              <div className="cl-form-group">
-                                <label className="label" htmlFor="name">
-                                  Full Name
-                                </label>
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  name="name"
-                                  id="name"
-                                  placeholder="Name"
-                                />
-                              </div>
-                            </div>
-                            <div className="col-md-6">
-                              <div className="cl-form-group">
-                                <label className="label" htmlFor="email">
-                                  Email Address
-                                </label>
-                                <input
-                                  type="email"
-                                  className="form-control"
-                                  name="email"
-                                  id="email"
-                                  placeholder="Email"
-                                  required=""
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div className=" row cl-col-md-12">
-                            <div className="col-md-6">
-                              <div className="cl-form-group">
-                                <label className="label" htmlFor="name">
-                                  Product Category
-                                </label>
-                                <Select
-                                  className="cl-form-control"
-                                  options={productOptions}
-                                  placeholder="Select Product Category"
-                                  isSearchable
-                                  isClearable
-                                />
-                              </div>
-                            </div>
-                            <div className="col-md-6">
-                              <div className="cl-form-group">
-                                <label className="label" htmlFor="email">
-                                  Estimated Budget
-                                </label>
-                                <Select
-                                  className="cl-form-control"
-                                  options={estimatedPrice}
-                                  placeholder="Select Estimated Budget"
-                                  isSearchable
-                                  isClearable
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div className="cl-col-md-12">
-                            <div className="cl-form-group">
-                              <label className="label" htmlFor="subject">
-                                Phone Number
-                              </label>
-                              <input
-                                type="number"
-                                className="form-control"
-                                name="number"
-                                id="number"
-                                placeholder="Enter Your Phone Number"
-                              />
-                            </div>
-                          </div>
-                          <div className="cl-col-md-12">
-                            <div className="cl-form-group">
-                              <label className="label" htmlFor="#">
-                                Message
-                              </label>
-                              <textarea
-                                name="message"
-                                className="cl-form-control"
-                                id="message"
-                                cols={30}
-                                rows={4}
-                                placeholder="Message"
-                                required=""
-                                minLength={5}
-                                defaultValue={""}
-                              />
-                            </div>
-                          </div>
-                          <div className="cl-col-md-12">
-                            <div className="cl-form-group">
-                              <input
-                                type="submit"
-                                defaultValue="Send Message"
-                                className="cl-btn cl-btn-primary"
-                              />
-                              <div className="submitting btn btn-danger" />
-                            </div>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                  <div className="cl-col-lg-4 cl-col-md-5 cl-d-flex cl-align-items-stretch bg-texture">
-                    <div className="info-wrap cl-w-100 cl-p-md-3 cl-p-4" style={{    marginTop: "25px"}}>
-                      <h3>Let's Create Something Beautiful Together</h3>
-                      <p className="cl-mb-4">
-                        Share your requirements with us, and our experts will
-                        help you find the perfect marble mandir, handicraft, or
-                        stone decor for your space.
-                      </p>
+          <form id="contactForm" name="contactForm" className="cu-form">
+            <div className="cu-grid-2">
+              <div className="cu-group">
+                <label htmlFor="name">Full Name</label>
+                <input
+                  type="text"
+                  className="cu-input"
+                  name="name"
+                  id="name"
+                  placeholder="Name"
+                />
+              </div>
 
-                      <ul class="customization-features">
-                        <li>Custom Marble Designs &amp; Finishes</li>
-                        <li>Premium Quality Makrana Marble</li>
-                        <li>Expert Craftsmanship &amp; Finishing</li>
-                        <li>Custom Sizes, Patterns &amp; Designs</li>
-                      </ul>
-                      {isShow && <div>
-                      {/* <div className="dbox cl-w-100 cl-d-flex cl-align-items-start">
-                        <div className="icon cl-d-flex cl-align-items-center cl-justify-content-center">
-                          <span className="fa fa-map-marker"></span>
-                        </div>
-                        <div className="text cl-pl-3">
-                          <p>
-                            <span>Address:</span> 198 West 21th Street, Suite
-                            721 New York NY 10016
-                          </p>
-                        </div>
-                      </div> */}
-                      <div className="dbox cl-w-100 cl-d-flex cl-align-items-center">
-                        <div className="icon cl-d-flex cl-align-items-center cl-justify-content-center">
-                          <span className="fa fa-phone"></span>
-                        </div>
-                        <div className="text cl-pl-3">
-                          <p>
-                            {/* <span>Phone:</span>{" "} */}
-                            <a href="tel://916367877532">+91 6367877532</a>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="dbox cl-w-100 cl-d-flex cl-align-items-center">
-                        <div className="icon cl-d-flex cl-align-items-center cl-justify-content-center">
-                          <span className="fa fa-paper-plane"></span>
-                        </div>
-                        <div className="text cl-pl-3">
-                          <p>
-                            {/* <span>Email:</span>{" "} */}
-                            <a href="mailto:whiteMarbleArt@gmail.com">
-                              whiteMarbleArt@gmail.com
-                            </a>
-                          </p>
-                        </div>
-                      </div>
-                      {/* <div className="dbox cl-w-100 cl-d-flex cl-align-items-center">
-                        <div className="icon cl-d-flex cl-align-items-center cl-justify-content-center">
-                          <span className="fa fa-globe"></span>
-                        </div>
-                        <div className="text cl-pl-3">
-                          <p>
-                            <span>Website</span> <a href="#">yoursite.com</a>
-                          </p>
-                        </div>
-                      </div> */}
-                      </div>}
-                    </div>
-                  </div>
-                </div>
+              <div className="cu-group">
+                <label htmlFor="email">Email Address</label>
+                <input
+                  type="email"
+                  className="cu-input"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+
+              <div className="cu-group">
+                <label htmlFor="category">Product Category</label>
+                <Select
+                  inputId="category"
+                  classNamePrefix="cu-select"
+                  options={productOptions}
+                  placeholder="Select Product Category"
+                  isSearchable
+                  isClearable
+                />
+              </div>
+
+              <div className="cu-group">
+                <label htmlFor="budget">Estimated Budget</label>
+                <Select
+                  inputId="budget"
+                  classNamePrefix="cu-select"
+                  options={estimatedPrice}
+                  placeholder="Select Estimated Budget"
+                  isSearchable
+                  isClearable
+                />
               </div>
             </div>
-          </div>
+
+            <div className="cu-group">
+              <label htmlFor="number">Phone Number</label>
+              <input
+                type="tel"
+                inputMode="numeric"
+                className="cu-input"
+                name="number"
+                id="number"
+                placeholder="Enter Your Phone Number"
+              />
+            </div>
+
+            <div className="cu-group">
+              <label htmlFor="message">Message</label>
+              <textarea
+                name="message"
+                className="cu-input"
+                id="message"
+                rows={4}
+                placeholder="Message"
+                required
+                minLength={5}
+              />
+            </div>
+
+            <button type="submit" className="cu-btn">
+              Send Message
+            </button>
+          </form>
         </div>
-      </section>
-    </div>
+
+        {/* ---------- Info ---------- */}
+        <div className="cu-info-side">
+          <h3>Let's Create Something Beautiful Together</h3>
+          <p>
+            Share your requirements with us, and our experts will help you find
+            the perfect marble mandir, handicraft, or stone decor for your
+            space.
+          </p>
+
+          <ul className="customization-features">
+            <li>Custom Marble Designs &amp; Finishes</li>
+            <li>Premium Quality Makrana Marble</li>
+            <li>Expert Craftsmanship &amp; Finishing</li>
+            <li>Custom Sizes, Patterns &amp; Designs</li>
+          </ul>
+
+          {isShow && (
+            <div className="cu-contact-list">
+              <div className="dbox">
+                <div className="icon">
+                  <span className="fa fa-phone"></span>
+                </div>
+                <a href="tel:+916367877532">+91 6367877532</a>
+              </div>
+
+              <div className="dbox">
+                <div className="icon">
+                  <span className="fa fa-paper-plane"></span>
+                </div>
+                <a href="mailto:whiteMarbleArt@gmail.com">
+                  whiteMarbleArt@gmail.com
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
   );
 };
 

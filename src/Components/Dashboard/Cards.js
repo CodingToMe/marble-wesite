@@ -1,35 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+const getSlides = () => {
+  const w = window.innerWidth;
+  if (w < 576) return 1;
+  if (w < 992) return 2;
+  if (w < 1200) return 3;
+  return 4;
+};
 
 const Cards = () => {
   const navigate = useNavigate();
+  const [slides, setSlides] = useState(getSlides());
+
+  useEffect(() => {
+    const onResize = () => setSlides(getSlides());
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    autoplay: true, // 🔹 autoplay on
-    autoplaySpeed: 2000, // 🔹 autoplay speed 2 seconds
-    slidesToShow: 4, // show 4 cards at once
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: slides,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 768, // mobile
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 1024, // tablet
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
+    arrows: false,
+    // responsive hata diya
   };
 
+  // mandirData same rahega ...
   const mandirData = [
     {
       id: 1,
@@ -67,26 +72,17 @@ const Cards = () => {
       link: "/Marble-mandir",
     },
   ];
-  const handleViewMore = () => {
-    navigate("/marble-mandir");
-  };
+
   return (
     <div className="slider-cards">
-      <Slider {...settings}>
+      {/* key change hone par slider fresh render hota hai */}
+      <Slider key={slides} {...settings}>
         {mandirData.map((item) => (
-          <div
-            key={item.id}
-            className="container d-flex align-items-center justify-content-center"
-            style={{ height: "100vh" }}
-            onClick={()=>handleViewMore()}
-          >
+          <div key={item.id} className="slide-wrapper" onClick={() => navigate("/marble-mandir")}>
             <div className="cat-card card text-light border-0">
               <img src={item.image} alt={item.title} />
-
-              <div className="card-img-overlay text-center"></div>
-
               <div className="card-img-overlay">
-                <p className="p para">{item.title}</p>
+                <p className="para">{item.title}</p>
               </div>
             </div>
           </div>

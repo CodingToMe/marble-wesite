@@ -182,7 +182,7 @@ const handleCardClick = (data, cardIndex) => {
       <div className="row">
         {marbleDecorData.map((data, col) => (
           <div key={col} className="col-md-6">
-            <div style={{ margin: "40px 0px 71px 65px" }}>
+            <div  className="content-box">
               <h4 className="sub-heading" onClick={() => handleCardClick(data)}>{data?.heading}</h4>
               <p>{data?.pera}</p>
             </div>

@@ -5,30 +5,29 @@ import { ContectUsSection } from "../Components/Dashboard";
 const ContactUs = () => {
   return (
     <div>
-      <div className="about-us">
-        <img
-          className="banner"
-          src="images/bg3.jpg"
-          alt="Snow"
-          width={"100%"}
-          height={"470px"}
-        />
+    <div className="about-us">
+  <div className="banner-wrap">
+    <img
+      className="banner"
+      src="images/bg3.jpg"
+      alt="Contact White Marble Art"
+    />
 
-        <div className="centered">
-          <div className="content">
-            <h1 className="title">
-              Let’s build something in
-              <span style={{ color: "#ff4000" }}> Marble </span>
-            </h1>
-            <p className="para">
-              {/* <span style={{color:"#ffff"}} >White Marble Art </span> */}
-              Whether it's a marble temple, fountain, or handcrafted decor,
-              share your ideas with us, and we'll get back to you with design
-              options, sizes, and a quote.
-            </p>
-          </div>
-        </div>
+    <div className="centered">
+      <div className="content">
+        <h1 className="title">
+          Let’s build something in{" "}
+          <span style={{ color: "#ff4000" }}>Marble</span>
+        </h1>
+        <p className="para">
+          Whether it's a marble temple, fountain, or handcrafted decor, share
+          your ideas with us, and we'll get back to you with design options,
+          sizes, and a quote.
+        </p>
       </div>
+    </div>
+  </div>
+</div>
       <div className=" rootpage">
         <div className="contactUsSection  ">
           <div className="a1-section mt-4 text-center">

@@ -5,65 +5,66 @@ import { ContactUsCard } from "../commanComponents";
 const AboutUs = () => {
   return (
     <div className="about-us">
-      <div className="">
-        <img
-          className="banner"
-          src="images/about us banner.png"
-          alt="Snow"
-          width={"100%"}
-          height={"470px"}
-        />
+      <div className="banner-wrap">
+  <img
+    className="banner"
+    src="images/about us banner.png"
+    alt="White Marble Art banner"
+  />
 
-        <div className="centered">
-          <div className="content">
-            <h1 className="title">
-              The <span style={{ color: "#ff4000" }}>Art of Marble </span> , The
-              Beauty of Craftsmanship.
-            </h1>
-            <p className="para">
-              {/* <span style={{color:"#ffff"}} >White Marble Art </span> */}
-              White Marble Art creates exquisite handcrafted marble temples,
-              fountains, and decorative pieces, bringing timeless elegance to
-              homes, temples, and gardens across India.
-            </p>
-          </div>
-          <div className="stats">
-            <span>
-              <b>5+</b> Years of craft
-            </span>
-            <span>
-              <b>15+</b> Projects delivered
-            </span>
-            <span>
-              <b>100%</b> Hand finished
-            </span>
-          </div>
-        </div>
-      </div>
-      <section>
-        <div className="container wrap story">
-          <div>
-            <h2>Our Story</h2>
-            <p>
-              Our work began with a simple belief: a piece of white marble can
-              carry devotion, beauty and craftsmanship for a lifetime. For over
-              5 years, our family of artisans has been shaping raw marble into
-              mandirs, murtis, fountains and handicrafts.
-            </p>
-            <p>
-              Every piece is carved, polished and finished by hand. We choose
-              each block ourselves, so the stone you receive is pure, smooth and
-              free from flaws.
-            </p>
-            <p>
-             Today, we serve homes, temples, hotels and gardens with exquisite marble temples, fountains, decorative pieces and handcrafted creations, each reflecting timeless beauty and skilled craftsmanship.
-            </p>
-          </div>
-          <div className="quote">
-            “We don’t just sell marble. We shape it until it feels alive.”
-          </div>
-        </div>
-      </section>
+  <div className="centered">
+    <div className="content">
+      <h1 className="title">
+        The <span style={{ color: "#ff4000" }}>Art of Marble</span>, The
+        Beauty of Craftsmanship.
+      </h1>
+      <p className="para">
+        White Marble Art creates exquisite handcrafted marble temples,
+        fountains, and decorative pieces, bringing timeless elegance to homes,
+        temples, and gardens across India.
+      </p>
+    </div>
+
+    <div className="stats">
+      <span>
+        <b>5+</b> Years of craft
+      </span>
+      <span>
+        <b>15+</b> Projects delivered
+      </span>
+      <span>
+        <b>100%</b> Hand finished
+      </span>
+    </div>
+  </div>
+</div>
+     <section className="story-section">
+  <div className="container wrap story">
+    <div className="story-text">
+      <h2>Our Story</h2>
+      <p>
+        Our work began with a simple belief: a piece of white marble can carry
+        devotion, beauty and craftsmanship for a lifetime. For over 5 years,
+        our family of artisans has been shaping raw marble into mandirs,
+        murtis, fountains and handicrafts.
+      </p>
+      <p>
+        Every piece is carved, polished and finished by hand. We choose each
+        block ourselves, so the stone you receive is pure, smooth and free from
+        flaws.
+      </p>
+      <p>
+        Today, we serve homes, temples, hotels and gardens with exquisite
+        marble temples, fountains, decorative pieces and handcrafted
+        creations, each reflecting timeless beauty and skilled craftsmanship.
+      </p>
+    </div>
+
+    <blockquote className="quote">
+      “We don’t just sell marble. We shape it until it feels alive.”
+    </blockquote>
+  </div>
+</section>
       <section style={{ paddingTop: "0px" }} className="container">
         <div className="wrap">
           <h2>What we make</h2>
@@ -82,9 +83,10 @@ const AboutUs = () => {
                       Home temples and large temple structures with fine
                       carving, domes and pillars, made to your size and design.
                     </p>
-                    <span className="about-link" link="">
+                  
+                    <Link to={"/marble-mandir"} className="about-link">
                       Explore mandirs
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -101,9 +103,12 @@ const AboutUs = () => {
                       Garden, courtyard and indoor fountains in classic and
                       modern styles, built for steady flow and easy upkeep.
                     </p>
-                    <span className="about-link" link="">
+                    {/* <span className="about-link" link="">
                       Explore fountain
-                    </span>
+                    </span> */}
+                    <Link to={"/fountain"} className="about-link">
+                      Explore fountain
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const CommonStartInnerSection = ({
@@ -10,12 +9,15 @@ const CommonStartInnerSection = ({
   reverse = false,
 }) => {
   return (
-    <div className="text-center start-inner-section">
+    <section className="start-inner-section">
       <div className="container">
-        <div className={`row align-items-center ${reverse ? "flex-row-reverse" : ""}`}>
-
-          {/* Left Content */}
-          <div className="col-md-6 col-12">
+        <div
+          className={`row align-items-center g-4 ${
+            reverse ? "flex-md-row-reverse" : ""
+          }`}
+        >
+          {/* Content */}
+          <div className="col-12 col-md-6">
             <div className="carousel inner-sections">
               <div className="list">
                 <div className="item">
@@ -30,20 +32,20 @@ const CommonStartInnerSection = ({
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="col-md-6 col-12">
-            <div className="card card-section">
+          {/* Image */}
+          <div className="col-12 col-md-6">
+            <div className="card-section">
               <img
                 className="side-image"
                 src={image}
                 alt={topic || title}
+                loading="lazy"
               />
             </div>
           </div>
-
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
