@@ -58,7 +58,7 @@ const CarouselSection = () => {
 
   return (
     <>
-      <div className="carousel">
+      <div className="carousel"  >
         {/* list item */}
         <div className="list">
           <div className="item">
@@ -75,6 +75,7 @@ const CarouselSection = () => {
               <div className="buttons">
                 <button onClick={navigateToRelatedPage}>SEE MORE</button>
                 <button
+                
                   onClick={() => (window.location.href = "tel:+916367877532")}
                 >
                   CONTACT

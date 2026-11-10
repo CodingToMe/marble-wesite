@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import OrderModal from "../Components/Products/OrderModal";
 
 const CommonBanner = ({
   image,
   title,
   description,
   buttonText = "Order Now",
-  onButtonClick,
+  
   showButton = true,
+  data,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const handleOrder = (data) => {
+    setSelectedProduct(data);
+    setIsOpen(true);
+  };
   return (
     <section className="product-banner">
       <div className="row g-0 h-100">
@@ -24,13 +32,21 @@ const CommonBanner = ({
             <p>{description}</p>
 
             {showButton && (
-              <button type="button" className="buy-btn" onClick={onButtonClick}>
+              <button type="button" className="buy-btn" onClick={()=>handleOrder(data)
+              }>
                 {buttonText}
               </button>
             )}
           </div>
         </div>
       </div>
+      {isOpen && (
+        <OrderModal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          productData={selectedProduct}
+        />
+      )}
     </section>
   );
 };

@@ -22,7 +22,7 @@ const OrderModal = ({ isOpen, onClose, productData }) => {
       phone: formData.get("number"),
       message: formData.get("message"),
     };
-
+    
     console.log(payload, "Order Payload");
 
     try {
@@ -74,7 +74,8 @@ const OrderModal = ({ isOpen, onClose, productData }) => {
 
           <div className="modal-header">
             <h5 className="modal-title">
-              Order {productData?.title}
+              Order
+               {/* {productData?.title} */}
             </h5>
 
             <button
@@ -197,7 +198,7 @@ const OrderModal = ({ isOpen, onClose, productData }) => {
               className="btn btn-primary"
               disabled={loading}
             >
-              {loading ? "Submitting..." : "Submit Order"}
+              {loading ? "Submitting..." : "Submit"}
             </button>
           </div>
 

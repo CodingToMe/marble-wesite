@@ -5,7 +5,7 @@ import {
   CommonBanner,
   ContactUsCard,
 } from "../../commanComponents";
-import {mandirProducts} from '../../View/constantData'
+import {MandirInnerOrderData, mandirProducts} from '../../View/constantData'
 import { useNavigate } from "react-router-dom";
 
 const MandirSection = () => {
@@ -53,6 +53,7 @@ const MandirSection = () => {
     localStorage.setItem("orderData", JSON.stringify(data));
     navigate(`/product/${data.slug}`);
   }
+
   return (
     <div>
       <div className="mandir-section ">
@@ -66,11 +67,12 @@ const MandirSection = () => {
 
         <CommonCard heading={"Home Marble Mandir"} cardData={mandirProducts} navigateFuc={navigateFuc}/>
         <CommonBanner
-          image="images/mandir_images/mandir-card-bg20.png"
-          title="Heritage Peacock & Tree of Life Hand-Carved Marble Home Temple"
-          description="This hand-carved white marble temple features a central Tree of Life inlay flanked by gold-accented Om panels under glowing backlit arches. Crowned with a majestic dome and twin peacocks, it sits on an ornate storage base with floral carved drawers."
+          image={MandirInnerOrderData?.image}
+          title={MandirInnerOrderData?.title}
+          description={MandirInnerOrderData?.description}
           buttonText="Order Now"
           onButtonClick={handleOrder}
+          data={MandirInnerOrderData}
         />
         <ContactUsCard
           contactCardsData={contactCardsData}

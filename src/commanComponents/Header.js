@@ -350,6 +350,8 @@ const Header = () => {
     setNavActive(!navActive);
     document.body.style.overflow = !navActive ? "hidden" : "";
   };
+ 
+
 
   const handleDropdownClick = (index, e) => {
     if (window.innerWidth <= 968) {
@@ -433,11 +435,17 @@ const Header = () => {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "Products", path: null },
-    { name: "Services", path: null },
-    { name: "About", path: "/about" },
+    // { name: "Services", path: null },
     { name: "Contact", path: "/contact" },
+    { name: "About", path: "/about" },
   ];
 
+// NEW: link click par menu band karo
+const closeNav = () => {
+  setNavActive(false);
+  setDropdownActive(null);
+  document.body.style.overflow = "";
+};
   return (
     <header className="header">
       <nav
@@ -446,15 +454,16 @@ const Header = () => {
       >
         <div className="nav-brand">
           <img
-            src="/images/wmaLogo.png"
+            src="/images/wma_logo1.png"
             style={{
-              height: "36px",
+              height: "42px",
               width: "65px",
+              marginRight:"6px"
             }}
           />
-          <span href="#" className="logo">
+          <Link to={"/"} className="logo">
             White Marble Art
-          </span>
+          </Link>
         </div>
         <div className="nav-toggle" onClick={toggleNav}>
           <div className="hamburger">
@@ -499,16 +508,16 @@ const Header = () => {
                 {item.name === "Products" && (
                   <ul className="dropdown">
                     <li>
-                      <Link to="/marble-mandir">Marble Mandir</Link>
+                      <Link to="/marble-mandir" onClick={closeNav}>Marble Mandir</Link>
                     </li>
                     <li>
-                      <Link to="/fountain">Fountain</Link>
+                      <Link to="/fountain" onClick={closeNav}>Fountain</Link>
                     </li>  
                     <li>
-                      <Link to="/flower-pots">Flower Pots</Link>
+                      <Link to="/flower-pots" onClick={closeNav}>Flower Pots</Link>
                     </li>
                     <li>
-                      <Link to="/home-office-decor">Home Office Decor</Link>
+                      <Link to="/home-office-decor" onClick={closeNav}>Home Office Decor</Link>
                     </li>
                   </ul>
                 )}
@@ -647,14 +656,16 @@ const Header = () => {
                 </svg>
               </button>
             </div>
-            <div className="theme-toggle">
+            {/* Cart button  */}
+            {/* <div className="theme-toggle">
               <img
                 className="cart-icon"
                 src="/images/cart1.svg"
                 alt="cart icon"
               />
               <span className="cart-count">1</span>
-            </div>
+            </div> */}
+
             {/* <button className="theme-toggle" aria-label="Toggle theme" onClick={handleThemeToggle}>
               <svg className={`icon moon-icon ${!isDark ? 'hidden' : ''}`} viewBox="0 0 24 24" width={20} height={20}>
                 <path
