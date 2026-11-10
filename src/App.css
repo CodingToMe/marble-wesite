@@ -28,6 +28,14 @@
   --gradient-red: linear-gradient(90deg, #7a1416, #e02529);
   --topic-color: #ff4000;
 }
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 
 * {
   margin: 0;
@@ -40,7 +48,7 @@ body {
   /* background: var(--gradient-bg); */
   color: var(--text-color);
   line-height: 1.6;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 p {
@@ -88,7 +96,7 @@ p {
 /* End button section*/
 
 .sub-heading {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--primary-color);
   text-decoration: none;
@@ -155,7 +163,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 2rem;
+  /* padding: 0.5rem 2rem; */
   background: var(--nav-bg);
   backdrop-filter: var(--glass-effect);
   -webkit-backdrop-filter: var(--glass-effect);
@@ -213,7 +221,7 @@ p {
 
 .nav-list {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   list-style: none;
   margin-bottom: 0px;
 }
@@ -739,7 +747,8 @@ p {
 
 /* carousel */
 .carousel {
-  height: 100vh;
+  /* margin-top: 60px; */
+  height: 150vh;
   /* margin-top: -50px; */
   /* width: 100vw; */
   overflow: hidden;
@@ -747,6 +756,7 @@ p {
 }
 
 .carousel .list .item {
+  
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1482,7 +1492,64 @@ p {
   padding-right: 0;
 }
 /* responsive this marble mandir section-------------*/
+.slider-cards {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
 
+.slider-cards .slick-list {
+  overflow: hidden;
+}
+
+.slider-cards .slick-track {
+  display: flex;
+}
+
+.slider-cards .slick-slide {
+  min-width: 0;
+}
+
+.slider-cards .slick-slide > div {
+  width: 100%;
+}
+
+.card-slide {
+  width: 100%;
+  padding: 10px;
+}
+
+.slider-cards .cat-card {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.slider-cards .cat-card img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .slider-cards {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .card-slide {
+    padding: 5px;
+  }
+
+  .slider-cards .cat-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+}
 
 
 
@@ -1507,7 +1574,9 @@ p {
 .slider-wrapper {
   flex: 2;
   min-width: 0;
-  /* important for react-slick */
+  width: 100%;
+  overflow: hidden;
+
 }
 
 .marble-content h2 {
@@ -1534,10 +1603,10 @@ p {
   line-height: 1.6;
   font-size: 15px;
 }
-
+/* 
 .slider-wrapper {
   flex: 2;
-}
+} */
 
 .slide-card {
   position: relative;
@@ -1594,6 +1663,49 @@ p {
   flex-wrap: wrap;
   max-width: 90%;
 }
+/* Mobile Slider Fix */
+@media screen and (max-width: 768px) {
+  .marble-section {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    padding: 20px 15px;
+    gap: 20px;
+    overflow: hidden;
+  }
+
+  .marble-content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .slider-wrapper {
+    width: 100%;
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .slider-wrapper .slick-list {
+    overflow: hidden;
+  }
+
+  .slider-wrapper .slick-slide {
+    min-width: 0;
+  }
+
+  .slide-card {
+    width: 100%;
+    padding: 0 5px;
+  }
+
+  .slide-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+}
+/* marble mandir section end */
 
 /* .CNC-marble-section */
 .CNC-marble-section .cards {
@@ -4251,3 +4363,29 @@ a:focus {
     transform: translateY(0);
   }
 }
+
+/* 
+img {
+  max-width: 100%;
+}
+
+.slider-cards img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  .marble-section {
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 15px;
+    gap: 20px;
+  }
+
+  .marble-content,
+  .slider-wrapper {
+    width: 100%;
+    min-width: 0;
+  }
+} */
