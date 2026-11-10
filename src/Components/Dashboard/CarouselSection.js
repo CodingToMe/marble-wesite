@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CarouselSection = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     const carousel = document.querySelector(".carousel");
     const nextBtn = document.getElementById("next");
@@ -50,6 +52,10 @@ const CarouselSection = () => {
     prevBtn.onclick = () => showSlider("prev");
   }, []);
 
+  const navigateToRelatedPage = () => {
+    navigate("/marble-mandir");
+  };
+
   return (
     <>
       <div className="carousel">
@@ -62,12 +68,17 @@ const CarouselSection = () => {
               <div className="title">TRADITIONAL DESIGN</div>
               <div className="topic">MANDIR</div>
               <div className="des">
-                White marble temple featuring intricate CNC carvings, traditional domes, and elegant peacock motifs for luxury home interiors.
+                White marble temple featuring intricate CNC carvings,
+                traditional domes, and elegant peacock motifs for luxury home
+                interiors.
               </div>
               <div className="buttons">
-                <button>SEE MORE</button>
-                <button>Contect</button>
-                
+                <button onClick={navigateToRelatedPage}>SEE MORE</button>
+                <button
+                  onClick={() => (window.location.href = "tel:+916367877532")}
+                >
+                  CONTACT
+                </button>
               </div>
             </div>
           </div>
@@ -78,12 +89,17 @@ const CarouselSection = () => {
               <div className="title">PUSPH DESIGN</div>
               <div className="topic">MANDIR</div>
               <div className="des">
-                Pure white marble temple featuring a carved lotus crown, intricate jali arch, and hand-painted floral inlay for palace-style luxury homes.
+                Pure white marble temple featuring a carved lotus crown,
+                intricate jali arch, and hand-painted floral inlay for
+                palace-style luxury homes.
               </div>
               <div className="buttons">
-                <button>SEE MORE</button>
-                <button>CONTECT US</button>
-             
+                <button onClick={navigateToRelatedPage}>SEE MORE</button>
+                <button
+                  onClick={() => (window.location.href = "tel:+916367877532")}
+                >
+                  CONTACT
+                </button>
               </div>
             </div>
           </div>
@@ -94,12 +110,17 @@ const CarouselSection = () => {
               <div className="title">PEACOCK OM DESIGN</div>
               <div className="topic">MANDIR</div>
               <div className="des">
-                White marble temple with fine CNC carvings, hand-painted peacocks, and a peacock-feather Om centerpiece for elegant home interiors.
+                White marble temple with fine CNC carvings, hand-painted
+                peacocks, and a peacock-feather Om centerpiece for elegant home
+                interiors.
               </div>
               <div className="buttons">
-                <button>SEE MORE</button>
-                <button>CONTECT</button>
-               
+                <button onClick={navigateToRelatedPage}>SEE MORE</button>
+                <button
+                  onClick={() => (window.location.href = "tel:+916367877532")}
+                >
+                  CONTACT
+                </button>
               </div>
             </div>
           </div>
@@ -110,12 +131,17 @@ const CarouselSection = () => {
               <div className="title">ROYAL MAYUR DESIGN</div>
               <div className="topic">MANDIR</div>
               <div className="des">
-                Grand white marble temple with vibrant peacock motifs, auspicious swastik panels, and detailed carved drawers for luxury living spaces.
+                Grand white marble temple with vibrant peacock motifs,
+                auspicious swastik panels, and detailed carved drawers for
+                luxury living spaces.
               </div>
               <div className="buttons">
-                <button>SEE MORE</button>
-                <button >CONTECT</button>
-                
+                <button onClick={navigateToRelatedPage}>SEE MORE</button>
+                <button
+                  onClick={() => (window.location.href = "tel:+916367877532")}
+                >
+                  CONTACT
+                </button>
               </div>
             </div>
           </div>

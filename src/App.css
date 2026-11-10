@@ -748,9 +748,9 @@ p {
 /* carousel */
 .carousel {
   /* margin-top: 60px; */
-  height: 150vh;
+  height: 100vh;
   /* margin-top: -50px; */
-  /* width: 100vw; */
+  width: 100vw;
   overflow: hidden;
   position: relative;
 }
@@ -1097,7 +1097,7 @@ p {
 /* Large Laptop */
 @media screen and (max-width: 1200px) {
   .carousel {
-    height: 85vh;
+    height: 100vh;
   }
 
   .carousel .list .item .content {
@@ -1121,7 +1121,7 @@ p {
 /* Tablet */
 @media screen and (max-width: 991px) {
   .carousel {
-    height: 75vh;
+    height: 100vh;
     min-height: 550px;
   }
 
