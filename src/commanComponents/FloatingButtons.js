@@ -18,7 +18,7 @@ const FloatingButtons = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const whatsappNumber = "91XXXXXXXXXX"; // asli number daalein
+  const whatsappNumber = "916367877532";
   const callNumber = "+916367877532";
   const message = "Hello, I want to know more about your marble products.";
 
