@@ -803,4 +803,5 @@ const MandirInnerOrderData = {
   tags: ["Marble Mandir", "White Marble", "Handcrafted", "Home Temple"],
 };
 
-export { productOptions, estimatedPrice, MandirInnerOrderData };
+
+export { productOptions, estimatedPrice, MandirInnerOrderData, };
