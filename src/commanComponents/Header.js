@@ -337,6 +337,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../View/AuthContext";
 
 const Header = () => {
   const [navActive, setNavActive] = useState(false);
@@ -345,13 +346,12 @@ const Header = () => {
   const [searchValue, setSearchValue] = useState("");
   const [searchFocused, setSearchFocused] = useState(false);
   const navbarRef = useRef();
+  const { isAdmin, logout } = useAuth();
 
   const toggleNav = () => {
     setNavActive(!navActive);
     document.body.style.overflow = !navActive ? "hidden" : "";
   };
- 
-
 
   const handleDropdownClick = (index, e) => {
     if (window.innerWidth <= 968) {
@@ -440,12 +440,12 @@ const Header = () => {
     { name: "About", path: "/about" },
   ];
 
-// NEW: link click par menu band karo
-const closeNav = () => {
-  setNavActive(false);
-  setDropdownActive(null);
-  document.body.style.overflow = "";
-};
+  // NEW: link click par menu band karo
+  const closeNav = () => {
+    setNavActive(false);
+    setDropdownActive(null);
+    document.body.style.overflow = "";
+  };
   return (
     <header className="header">
       <nav
@@ -458,7 +458,7 @@ const closeNav = () => {
             style={{
               height: "42px",
               width: "65px",
-              marginRight:"6px"
+              marginRight: "6px",
             }}
           />
           <Link to={"/"} className="logo">
@@ -508,16 +508,24 @@ const closeNav = () => {
                 {item.name === "Products" && (
                   <ul className="dropdown">
                     <li>
-                      <Link to="/marble-mandir" onClick={closeNav}>Marble Mandir</Link>
+                      <Link to="/marble-mandir" onClick={closeNav}>
+                        Marble Mandir
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/fountain" onClick={closeNav}>Fountain</Link>
-                    </li>  
-                    <li>
-                      <Link to="/flower-pots" onClick={closeNav}>Flower Pots</Link>
+                      <Link to="/fountain" onClick={closeNav}>
+                        Fountain
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/home-office-decor" onClick={closeNav}>Home Office Decor</Link>
+                      <Link to="/flower-pots" onClick={closeNav}>
+                        Flower Pots
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/home-office-decor" onClick={closeNav}>
+                        Home Office Decor
+                      </Link>
                     </li>
                   </ul>
                 )}
@@ -656,6 +664,14 @@ const closeNav = () => {
                 </svg>
               </button>
             </div>
+            {isAdmin && (
+              <Link to="/admin-dashboard" style={{ color: "white" }}>
+                {" "}
+                <button type="button" class="btn btn-success">
+                  Dashboard
+                </button>
+              </Link>
+            )}
             {/* Cart button  */}
             {/* <div className="theme-toggle">
               <img

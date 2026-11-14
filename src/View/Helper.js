@@ -1,3 +1,4 @@
+import moment from "moment";
 
 /* ---------------- HELPERS ---------------- */
 function getProductById(id,products) {
@@ -28,4 +29,9 @@ function getCurrentProduct() {
     }));
 };
 
-export{generateProductOptions}
+const dateFormate =(date)=>{
+ return moment(date).format('DD-MM-YYYY');
+
+}
+
+export{generateProductOptions,dateFormate}

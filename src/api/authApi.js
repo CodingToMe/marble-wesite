@@ -12,3 +12,8 @@ export const adminLogin = async (credentials) => {
 
   return response.data;
 };
+
+export const register = async (payload) => {
+  const { data } = await API.post("/auth/register", payload);
+  return data; 
+};

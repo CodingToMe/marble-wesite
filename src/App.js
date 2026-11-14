@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import RenderRoutes from "./Routes";
 import {
   FloatingButtons,
@@ -10,15 +9,16 @@ import {
 } from "./commanComponents";
 
 function App() {
+  const { pathname } = useLocation();
+  const isAdmin = pathname.startsWith("/admin-dashboard");
+
   return (
     <div>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Header />
-        <RenderRoutes />
-        <Footer />
-        <FloatingButtons />
-      </BrowserRouter>
+      <ScrollToTop />
+      {!isAdmin && <Header />}
+      <RenderRoutes />
+      {!isAdmin && <Footer />}
+      { <FloatingButtons />}
     </div>
   );
 }

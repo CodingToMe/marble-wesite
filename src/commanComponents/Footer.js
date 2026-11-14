@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import Login from "../View/Login";
+import Register from "../View/Register";
 
 const Footer = () => {
+  const [isOpen,setIsOpen]=useState(false)
+  const [showRegister,setShowRegister]=useState(false)
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -16,10 +21,10 @@ const Footer = () => {
 
         <div className="footer-section">
           <h3>Accounts</h3>
-          <ul>
-            <li><a href="#">My Account</a></li>
-            <li><a href="#">Login / Register</a></li>
-            <li><a href="#">Cart</a></li>
+          <ul className="link">
+            <li><span>My Account</span></li>
+            <li><span onClick={()=>setIsOpen(true)}>Login </span></li>
+            <li><span onClick={()=>setShowRegister(true)}>Register</span></li>
           </ul>
         </div>
 
@@ -76,6 +81,16 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} White Marble Art. All rights reserved.</p>
       </div>
+      {isOpen &&<Login
+      isOpen={isOpen}
+      onClose={() => setIsOpen(false)}
+      />}
+
+     {showRegister && <Register
+  isOpen={showRegister}
+  onClose={() => setShowRegister(false)}
+  // onSwitchToLogin={() => setShowLogin(true)}
+/>}
     </footer>
   );
 };

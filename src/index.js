@@ -9,12 +9,17 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Header } from './commanComponents';
-
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from './View/AuthContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
+    <BrowserRouter>
+     <AuthProvider>
     <App />
+    </AuthProvider>
+    </BrowserRouter>
+    
   </React.StrictMode>
 );
 

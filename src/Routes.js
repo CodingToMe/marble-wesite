@@ -1,31 +1,53 @@
-import React, { Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom';  
-const RootPage =React.lazy(()=>import('./View/RootPage'));
-const MarbleMandir = React.lazy(()=>import('./Components/Products/MandirSection'))
-const Fountain =React.lazy(()=>import('./Components/Products/Fountain'))
-const HomeOfficeDecor =React.lazy(()=>import('./Components/Products/HomeOfficeDecor'))
-const FlowerPotsAndVases =React.lazy(()=>import('./Components/Products/FlowerPotsAndVases'))
-const AboutUs =React.lazy(()=>import('./View/AboutUs'))
-const Contact =React.lazy(()=>import('./View/ContactUs'))
-const ProductView =React.lazy(()=>import('./Components/Products/ProductView'))
+import React, { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import AdminRoute from "./AdminRoute";
+const RootPage = React.lazy(() => import("./View/RootPage"));
+const MarbleMandir = React.lazy(
+  () => import("./Components/Products/MandirSection"),
+);
+const Fountain = React.lazy(() => import("./Components/Products/Fountain"));
+const HomeOfficeDecor = React.lazy(
+  () => import("./Components/Products/HomeOfficeDecor"),
+);
+const FlowerPotsAndVases = React.lazy(
+  () => import("./Components/Products/FlowerPotsAndVases"),
+);
+const AboutUs = React.lazy(() => import("./View/AboutUs"));
+const Contact = React.lazy(() => import("./View/ContactUs"));
+const ProductView = React.lazy(
+  () => import("./Components/Products/ProductView"),
+);
 
+// admin routes import
+const AdminDashboard = React.lazy(
+  () => import("./Components/Admin/AdminDashboard"),
+);
 
 const RenderRoutes = () => {
   return (
-     <Suspense fallback={"loding..."} >
+    <Suspense fallback={"loding..."}>
       <Routes>
-      
-          <Route path="/" element={<RootPage/>}></Route>
-
+        <Route path="/" element={<RootPage />}></Route>
 
         {/* Public Routes */}
-        <Route path="/marble-mandir" element={<MarbleMandir/>} />
-        <Route path="/fountain" element={<Fountain/>} />
-        <Route path="/home-office-decor" element={<HomeOfficeDecor/>} />
-        <Route path="/flower-pots" element={<FlowerPotsAndVases/>} />
-        <Route path="/about" element={<AboutUs/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/product/:id" element={<ProductView/>} />
+
+        <Route path="/marble-mandir" element={<MarbleMandir />} />
+        <Route path="/fountain" element={<Fountain />} />
+        <Route path="/home-office-decor" element={<HomeOfficeDecor />} />
+        <Route path="/flower-pots" element={<FlowerPotsAndVases />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/product/:id" element={<ProductView />} />
+
+        {/* Admin Routes */}
+        <Route
+          path="/admin-dashboard"
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          }
+        />
 
         {/* 404 fallback if permissions are loaded */}
         {/* {isLoaded && (
@@ -35,7 +57,7 @@ const RenderRoutes = () => {
 
       {/* <CustomToast /> */}
     </Suspense>
-  )
-}
+  );
+};
 
-export default RenderRoutes
+export default RenderRoutes;

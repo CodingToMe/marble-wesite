@@ -3546,6 +3546,9 @@ textarea.cu-input {
     grid-column: auto;
   }
 }
+.footer-section .link{
+  cursor: pointer;
+}
 /* ---------------------------------Contect Us Page----------------------------------------- */
 /* CONTACT INFO CARDS */
 .contact-us-card .wrap {
