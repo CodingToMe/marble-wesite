@@ -98,9 +98,9 @@ export const mandirProducts = [
     slug: "marble-mandir",
     description:
       "Premium Finishing – Smooth surfaces with a refined and luxurious appearance.",
-    image: "images/mandir_images/mandir-card12.jpg", // card wali main image (same)
+    image: "images/mandir_images/mandir-card12.png", // card wali main image (same)
     images: [
-      "images/mandir_images/mandir-card12.jpg", // main view
+      "images/mandir_images/mandir-card12.png", // main view
       // "extra view 2 yahan",
       // "extra view 3 yahan",
       // "extra view 4 yahan",

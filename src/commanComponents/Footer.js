@@ -14,7 +14,7 @@ const Footer = () => {
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Home Marble Mandir</a></li>
-            <li><a href="#">Marble Slabs</a></li>
+            <li><a href="#">Beautiful Collections</a></li>
             <li><a href="#">Modern Marble Architecture &amp; Decor</a></li>
           </ul>
         </div>
@@ -38,26 +38,26 @@ const Footer = () => {
             <a href="tel:+919950769265">9950769265</a>
           </p>
           <p>
-            ✉️ <a href="mailto:whiteMarbleArt@gmail.com">whiteMarbleArt@gmail.com</a>
+            ✉️ <a href="mailto:whitemarblearts@gmail.com">whitemarblearts@gmail.com</a>
           </p>
 
           <div className="social-icons">
             <a
-              href="https://www.facebook.com/whitemarblearts"
+              href="https://www.facebook.com/whitemarbleart"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
               <i className="fab fa-facebook-f" />
             </a>
-            <a
+            {/* <a
               href="https://www.twitter.com/whitemarblearts"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
             >
               <i className="fab fa-twitter" />
-            </a>
+            </a> */}
             <a
               href="https://www.instagram.com/whitemarblearts"
               target="_blank"
@@ -67,7 +67,7 @@ const Footer = () => {
               <i className="fab fa-instagram" />
             </a>
             <a
-              href="https://www.youtube.com/company/yourpage"
+              href="https://www.youtube.com/@WhiteMarbleArt"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"

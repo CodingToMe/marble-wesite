@@ -408,8 +408,8 @@ const ContectUsSection = ({ isShow = true }) => {
                 <div className="icon">
                   <span className="fa fa-paper-plane"></span>
                 </div>
-                <a href="mailto:whiteMarbleArt@gmail.com">
-                  whiteMarbleArt@gmail.com
+                <a href="mailto:whitemarblearts@gmail.com">
+                  whitemarblearts@gmail.com
                 </a>
               </div>
             </div>
