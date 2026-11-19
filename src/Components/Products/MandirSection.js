@@ -5,12 +5,13 @@ import {
   CommonBanner,
   ContactUsCard,
 } from "../../commanComponents";
-import {MandirInnerOrderData, mandirProducts} from '../../View/constantData'
+import { MandirInnerOrderData, mandirProducts, marbleMandirSEOData } from "../../View/constantData";
 import { useNavigate } from "react-router-dom";
+import SEO from "../SEO";
 
 const MandirSection = () => {
-  const navigate =useNavigate()
-  
+  const navigate = useNavigate();
+
   const contactCardsData = [
     {
       id: 1,
@@ -49,13 +50,18 @@ const MandirSection = () => {
   const handleOrder = () => {
     console.log("Order Now clicked");
   };
-  const navigateFuc =(data)=>{
+  const navigateFuc = (data) => {
     localStorage.setItem("orderData", JSON.stringify(data));
     navigate(`/product/${data.slug}`);
-  }
+  };
 
   return (
     <div>
+      <SEO
+        title={marbleMandirSEOData?.title}
+        description={marbleMandirSEOData?.description}
+        url={marbleMandirSEOData?.url}
+      />
       <div className="mandir-section ">
         <CommonStartInnerSection
           author="Explore Our"
@@ -65,7 +71,11 @@ const MandirSection = () => {
           image="images/mandir_images/mandir-card4.jpeg"
         />
 
-        <CommonCard heading={"Home Marble Mandir"} cardData={mandirProducts} navigateFuc={navigateFuc}/>
+        <CommonCard
+          heading={"Home Marble Mandir"}
+          cardData={mandirProducts}
+          navigateFuc={navigateFuc}
+        />
         <CommonBanner
           image={MandirInnerOrderData?.image}
           title={MandirInnerOrderData?.title}

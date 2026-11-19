@@ -8,12 +8,18 @@ import {
   ContectUsSection,
   MarbleSection,
 } from "../Components/Dashboard";
-
+import SEO from "../Components/SEO";
+import { homePageSEOData } from "./constantData";
 
 const RootPage = () => {
   return (
     <>
       {/* <Header /> */}
+      <SEO
+        title={homePageSEOData.title}
+        description={homePageSEOData.description}
+        url={homePageSEOData?.url}
+      />
       <CarouselSection />
       <div className="container  rootpage mt-4">
         <div className="a1-section mt-4 text-center">
@@ -70,7 +76,7 @@ const RootPage = () => {
       <div className=" rootpage">
         <div className="contactUsSection  ">
           <div className="a1-section mt-4 text-center">
-            <ContectUsSection/>
+            <ContectUsSection />
           </div>
         </div>
       </div>
@@ -79,9 +85,7 @@ const RootPage = () => {
       {/* <div className=" youtube-section">
         <YouTubeCarousel />
       </div> */}
-      <>
-        {/* <Footer /> */}
-      </>
+      <>{/* <Footer /> */}</>
     </>
   );
 };

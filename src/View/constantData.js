@@ -803,5 +803,22 @@ const MandirInnerOrderData = {
   tags: ["Marble Mandir", "White Marble", "Handcrafted", "Home Temple"],
 };
 
+const homePageSEOData ={
+        title:"White Marble Art | Premium Marble Mandir & Handicrafts",
+        description:"Buy premium marble mandir, marble fountains, flower pots and handcrafted marble decor. Manufacturer and supplier from Makrana, Rajasthan, India.",
+        url:"https://whitemarbleart.com/"
+};
+const marbleMandirSEOData = {
+  title: "Premium Marble Mandir | White Marble Art",
+  description:
+    "Explore beautifully handcrafted marble mandir for home and temples. Premium Makrana marble temple designs with custom options.",
+  url: "https://whitemarbleart.com/marble-mandir",
+};
 
-export { productOptions, estimatedPrice, MandirInnerOrderData, };
+export {
+  productOptions,
+  estimatedPrice,
+  MandirInnerOrderData,
+  homePageSEOData,
+  marbleMandirSEOData,
+};

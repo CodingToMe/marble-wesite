@@ -3,21 +3,21 @@
   "short_name": "White Marble Art",
   "name": "White Marble Art - Premium Marble Handicrafts",
   "icons": [
-    // {
-    //   "src": "logo-round.png",
-    //   "sizes": "360x360 32x32 24x24 16x16",
-    //   "type": "image/x-icon"
-    // },
-    // {
-    //   "src": "logo-round.png",
-    //   "sizes": "360x360",
-    //   "type": "image/png"
-    // },
-    // {
-    //   "src": "logo512.png",
-    //   "sizes": "360x360",
-    //   "type": "image/png"
-    // }
+    {
+      "src": "logo-round.png",
+      "sizes": "360x360 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo-round.png",
+      "sizes": "360x360",
+      "type": "image/png"
+    },
+    {
+      "src": "logo512.png",
+      "sizes": "360x360",
+      "type": "image/png"
+    }
   ],
   "start_url": "/",
   "display": "standalone",

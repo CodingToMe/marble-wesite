@@ -454,6 +454,7 @@ const Header = () => {
       >
         <div className="nav-brand">
           <img
+            alt="logo"
             src="/images/wma_logo1.png"
             style={{
               height: "42px",
